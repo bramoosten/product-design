@@ -26,11 +26,46 @@ a:hover {
  * Base structure
  */
 
- view-fill {
 
-    
+.ping{-webkit-animation:ping 3s ease-in-out infinite both;animation:ping 3s ease-in-out infinite both}
 
+@-webkit-keyframes ping {
+  0% {
+    -webkit-transform: scale(0.2);
+            transform: scale(0.2);
+    opacity: 0.8;
+  }
+  80% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(2.2);
+            transform: scale(2.2);
+    opacity: 0;
+  }
 }
+@keyframes ping {
+  0% {
+    -webkit-transform: scale(0.2);
+            transform: scale(0.2);
+    opacity: 0.8;
+  }
+  80% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(2.2);
+            transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+
+
 html,
 body {
   background-color: #fff;
@@ -57,13 +92,14 @@ color: #313442;
 
   h3 {
   font-family: 'Jost', sans-serif;
-  font-weight: 500 !important;
+  font-weight: 400 !important;
   line-height: 110% !important;
     color: #000000;
-    padding-bottom: 16px;
+    padding-bottom: 8px;
+    padding-top: 8px;
+
 
 }
-
 a {
   font-family: adobe-caslon-pro, serif;
   font-weight: 400 !important;
@@ -88,6 +124,8 @@ body {
 
 
 }
+
+
 
 img {
 
