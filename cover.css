@@ -66,6 +66,7 @@ a:hover {
 
 
 
+
 html,
 body {
   background-color: #fff;
@@ -78,6 +79,7 @@ body {
   font-family: 'Jost', sans-serif;
   font-weight: 500 !important;
   line-height: 90% !important;
+  font-size: 8rem ; 
     color: #fff;
 
 }
@@ -125,7 +127,16 @@ body {
 
 }
 
+@media only screen and (max-width: 600px) {
+    h1 {
+  font-size: 5rem; 
+  }
 
+  .masthead-brand {
+padding-bottom: 10px;
+
+  }
+}
 
 img {
 
