@@ -58,8 +58,14 @@ header .overlay {
   }
 }
 .custom-bg {
+    background: #29353C center center scroll;
 
-    background-color: #29353C;
+
+
+}
+.hero-bg {
+
+    background: url(img/gradient-bg.png) center center scroll;
 
 
 }
