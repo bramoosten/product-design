@@ -67,11 +67,11 @@ a:hover {
 
 .jumbotron {
   color: white;
-  background-image: bo-resume.png;
+  background-image: url("https://raw.githubusercontent.com/bramoosten/product-design/master/pexels-photo-699122.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
+  height: 50vh;
 }
 
 html,
@@ -126,7 +126,7 @@ body {
   display: -ms-flexbox;
   display: flex;
   background-color: #29353C;
-    color: #000000;"
+    color:;"
 
   /*text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
   box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5); */

@@ -1,143 +1,236 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="generator" content="Jekyll v4.0.1">
-    <title>Bram Oosten</title>
-
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/cover/">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Bram Oosten</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+	<script src="https://use.fontawesome.com/releases/v5.12.1/js/all.js"></script>
+	<link href="style.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://use.typekit.net/hix4uzk.css">
+</head>
+<body>
 
-
-
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
-    <!-- Custom styles for this template -->
-    <link href="cover.css" rel="stylesheet">
-  </head>
-  <body class="">
-<div class="col-md-12" style="background-color: #29353C;">
-  <div class="container w-100 h-100 p-3 flex-column">
-    <header class="masthead mb-auto">
-      <div class="inner">
-        <h3 class="masthead-brand text-center"><img class="masthead-brand" height="35" src="bo-logo.png"></h3>
-        <nav class="nav nav-masthead justify-content-center">
-          <a class="nav-link active" href="#">Home</a> <a class="nav-link" href="#Projects">Projects</a> <a class="nav-link" href="#">Resume</a> <a class="nav-link" href="#">Contact</a>
-        </nav>
-      </div>
-    </header>
-
-    <div class="container d-flex h-100">
-      <div class="row">
-        <div class="col-l-12 mx-auto align-self-center w-100">
-            <h1 class="text-left" style="margin-left:-8px;">Bram Oosten</h1>
-            <p class="text-left" style=" color: #D4D6D8; font-size: 1.1rem;"><br>
-            Product designer, cyclist, <a href="https://www.instagram.com/postcardsfrombram/">postcard collector</a> based in the American Northeast.</p>
-            <p class="text-left" style=" color: #D4D6D8; font-size: 1.1rem;">Building for Jobcase, formerly at Brightcove and RunKeeper.</p>
-
-                  <div class="text-center" style="width:100%;"><center>
-                    <a class="text-center" href="#Projects"><h3 class="masthead-brand "><img class="masthead-brand" style="position: absolute; bottom: 50px;" height="50" src="arrow-asset.svg"></h3></a></div>
-
-
-        </div>
-      </div>  
-
+<!-- Navigation -->
+<nav class="navbar navbar-expand-md navbar-dark custom-bg sticky-top">
+	<div class="container">
+		<a class="navbar-brand" href="index.html"><img src="img/bo-logo.png" style="height: 35px;"></a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarResponsive">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="#">Home</a>
+				</li>
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Projects</a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="skip-project.html">Skip by Jobcase</a>
+      <a class="dropdown-item" href="for-you.html">For You</a>
+      <a class="dropdown-item" href="west-virginia.html">Discover WV Jobs</a>
+      <a class="dropdown-item" href="email-projects.html">Email Promotions</a>      
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="index.html#Projects">All</a>
     </div>
+  </li>
+				<li class="nav-item ">
+					<a class="nav-link" href="#">Resume</a>
+				</li>
+				<li class="nav-item ">
+					<a class="nav-link" href="mailto:bramoosten@me.com">Contact</a>
+				</li>
+				</ul>												
+		</div>
+	</div>
+
+</nav>
 
 
+<!--- Jumbotron -->
+<div class="jumbotron-fluid custom-bg">
+  <div class="container">
+    <div class="row align-items-center vh-100">
+      <div class="col-md-12">
+          <h1 class="text-white name">Bram Oosten</h1>
+            <p class="text-light lead subhead">
+            Product designer, cyclist, <a class="text-light" href="https://www.instagram.com/postcardsfrombram/">postcard collector</a> based in the American Northeast.</p>
+            <p class="text-light lead subhead">Building for Jobcase, formerly at Brightcove and RunKeeper.</p>
+      </div>
+    </div>  
+  </div>
+
+                  <div class="text-center">
+                    <a class="text-center" href="#Projects"><img style="position: absolute; bottom: 30px;" height="50" src="img/arrow-asset.svg"></a></div>
+</div>
+
+<!--- Projects -->
     <div class="container album py-5">
       <div class="row py-5 text-center">
         <a id="Projects">
         <h2 style="padding-left:16px">Projects</h2></a>
       </div>
       <div class="row">
-        <div class="col-md-6">
-          <a href="#example">
+      	        <div class="col-md-6">
           <div class="card mb-4">
-            <img class="bd-placeholder-img card-img-top" height="225" src="project-feature-fy.jpg" style="object-fit:cover;" width="100%">
-            <div class="card-body">
-              <h3 class="card-title">For You</h3>
-              <p class="card-text">An experience for Jobcase members to engage with user generated content for career progression and job searches.</p>
-            </div>
-          </div></a>
-        </div>
-        <div class="col-md-6">
-          <div class="card mb-4">
-            <img class="bd-placeholder-img card-img-top" height="225" src="project-feature-wv.jpg" width="100%">
-            <div class="card-body">
-              <h3 class="card-title">Discover WV Jobs</h3>
-              <p class="card-text">A career discovery tool for residents of West Virginia facing changes to local industry.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="card mb-4">
-            <img class="bd-placeholder-img card-img-top" height="225" src="project-feature-email.jpg" width="100%">
-            <div class="card-body">
-              <h3 class="card-title">Email Promotions</h3>
-              <p class="card-text">Single-page, responsive email designs promoting features, discussions, and offers, to subscribers.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="card mb-4">
-            <img class="bd-placeholder-img card-img-top" height="225" src="pexels-photo-699122.jpg" width="100%">
+            <img class="card-img-top" src="img/Scene 6.2020-07-19 19_39_04.gif">
             <div class="card-body">
               <h3 class="card-title">Skip by Jobcase</h3>
               <p class="card-text">An app for hourly workers laid off during the COVID-19 pandemic to transition into a new job after reopening.</p>
+                            <a href="skip-project.html" class="btn btn-outline-secondary btn-fix">View</a>
+
+            
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card mb-4">
+            <img class="card-img-top" src="img/skip.2020-07-19 19_46_56.gif">
+            <div class="card-body">
+              <h3 class="card-title">For You</h3>
+              <p class="card-text title-fix">An experience for Jobcase members to engage with user generated content for career progression and job searches.</p>
+              <a href="for-you.html" class="btn btn-outline-secondary btn-fix">View</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card mb-4">
+            <img class="card-img-top" src="img/wv.2020-07-19 19_42_05.gif">
+            <div class="card-body">
+              <h3 class="card-title">Discover WV Jobs</h3>
+              <p class="card-text">A career discovery tool for residents of West Virginia facing changes to local industry.</p>
+				<a href="west-virginia.html" class="btn btn-outline-secondary btn-fix">View</a>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card mb-4">
+            <img class="card-img-top" src="img/email.2020-07-19 19_45_00.gif">
+            <div class="card-body">
+              <h3 class="card-title">Email Promotions</h3>
+              <p class="card-text">Single-page, responsive email designs promoting features, discussions, and offers, to subscribers.</p>
+				<a href="email-projects.html" class="btn btn-outline-secondary btn-fix">View</a>
+
             </div>
           </div>
         </div>
       </div>
     </div>
- <!--
-    <div class="container album py-5">
-      <div class="row py-5 text-center">
-        <a id="Projects">
-        <h2 style="padding-left:16px">Resume</h2></a>
-      </div>
-      <div class="row">
-        <div class="col-md-12" >
-          <a href="#example">
-          <div class="card mb-4">
-            <img class="bd-placeholder-img card-img-top" src="bo-resume.png" style="object-fit:cover; box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.16);" width="100%">
-          
-            </div>
-          </div></a>
-        </div>
-      
-      </div>
-    </div>
--->
-  </div>
-</div>
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js">
-</script> 
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js">
-</script> 
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js">
-</script>
+<!--- Resume Section
+
+<section class="section gray-bg" id="resume">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section-title">
+                            <h2>Experience</h2>
+                            <p>I design and develop services for customers of all sizes, specializing in creating stylish, modern websites</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 m-15px-tb">
+                        <div class="resume-box">
+                            <ul>
+                                <li class="resume">
+                                    <div class="icon">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                    <span class="time">April 2019 - Present</span>
+                                    <h3>Jobcase Inc.</h5>
+                                    <h5>Product Designer</h5>
+                                    <p>Designed mobile and desktop experiences for Jobcase that led to higher engagement, content contribution, and greater stickiness.</p>
+									<p>Saw to execution of flows working closely with developers and engineers to bring pixel-perfect designs to every screen.</p>
+
+									<p>Conducted user interviews to evaluate prototypes and beta releases for better usability and to better meet user needs.</p>
+
+									<p>Served as contact point for freelancers and agencies to coordinate delivery of on-brand assets and projects.</p>
+
+									<p>Worked to modernize existing experiences with the goal of delivering high-impact changes with limited development resources</p>
+                                </li>
+                                <li>
+
+									<span class="time">November 2017 - April 2019</span>
+                                    <h5>Interactive Designer</h5>
+                                    <p>Responsible for designing and developing email campaigns and A/B tests to increase engagement across the Jobcase member lifecycle.</p>
+                                    <p>Worked directly with teams to ideate and execute new concepts and establish coherent, user-focused email experiences that achieve business goals. Helped grow email reach and lift key success metrics across the email team.</p>
+                                    <p>Served direct client needs to achieve success in relationships with companies like Apple, Amazon, and Lyft by producing custom branded emails and ad creatives.</p>
+                                    <p>Designed and prototyped mockups for on-site design tests and microsites. Evolved and established branding for Jobcase and sub-brands.</p>
+                                </li>  
+                                <li>
+                                    <div class="icon">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                    <span class="time">January 2016 - November 2017</span>
+                                    <h3>Brightcove</h5>
+                                    <h5>Design and Marketing Specialist</h5>
+
+                                    <p>Supported creative initiatives across six different languages, including the design and development of email campaigns, print and banner ads, presentations, white papers, datasheets and event signage.</p>
+
+									<p>Works with stakeholders in 14 offices internationally to identify and translate requirements into brand appropriate solutions that meet business objectives.</p>
+
+									<p>Assisted in day-to-day email marketing activities including campaign set-up, scheduling, tagging and testing and reports on the success of campaigns, suggesting improvements for future initiatives.</p>
+
+									<p>Solved technical issues related to templates, list segmentation and other aspects of email execution.</p>
+                                </li>                                                                                             
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        !-->
+
+<!--- Two Column Section -->
+
+
+<!--- Fixed background -->
+
+
+<!--- Emoji Section -->
+
+  
+<!--- Meet the team -->
+
+
+<!--- Cards -->
+
+
+<!--- Two Column Section -->
+
+
+<!--- Connect -->
+
+
+<!--- Footer -->
+
+
+<footer>
+	<div class="container-fluid padding custom-bg">
+		<div class="row text-center">
+			<div class="col-md-12">
+			<p class="text-white-50"><br>Built by Bram. Last updated July 2020.<br></p>
+			<p class="text-white-50">
+				<a href="https://www.linkedin.com/in/bramoosten/"><i class="fab fa-linkedin text-white-50"></i></a>&nbsp;&nbsp;&nbsp;
+			<a href="mailto:bramoosten@me.com"><i class="fas fa-envelope text-white-50"></i></a>&nbsp;&nbsp;&nbsp;
+			<a href="https://www.instagram.com/thebramford/"><i class="fab fa-instagram text-white-50"></i></a>
+			</p>			
+			</div>
+
+		</div>
+
+	</div>
+
+</footer>
 
 </body>
 </html>
