@@ -7,11 +7,32 @@ body {
     scroll-behavior: smooth;
 
 }
+.wv-gradient {
+
+  background: linear-gradient(135deg, rgba(120,131,240,1) 0%, rgba(75,85,205,1) 100%);
+
+}
+
+.skip-gradient {
+
+  background: linear-gradient(0deg, rgba(217,237,246,1) 0%, rgba(177,208,221,1) 100%);
 
 
+}
+.fy-gradient {
+
+  background: linear-gradient(130deg, rgba(51,91,129,1) 0%, rgba(16,62,102,1) 99%);
+
+}
+.email-gradient {
+
+  background: linear-gradient(120deg, rgba(90,157,234,1) 0%, rgba(60,138,225,1) 66%);
+
+
+}
 header {
   position: relative;
-  background-color: black;
+  background-color: #29353C;
   height: 75vh;
   min-height: 25rem;
   width: 100%;
