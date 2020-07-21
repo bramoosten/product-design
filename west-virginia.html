@@ -72,8 +72,8 @@
     <div class="row align-items-center">
       <div class="col-sm-12">
         <h2>Summary</h2>
-        <p>Although Jobcase is based in Massachusetts, we have strong partnerships with nonprofits and governmental institutions across the United States. One of these partners is with Discover the Real West Virginia Foundation, an organization affiliated with the state government who works with businesses and state leadership to meet the needs of employers and workers in the state. </p>
-        <p>After seeing our success partnering with the city of Los Angeles, the DRWV Foundation approached Jobcase to design and build a portal to help workers in West Virginia discover jobs. The primary ask was a website with different tools to aid in the job search for those looking to up-skill or those who might be unfamiliar with the options that would be a good match for them despite having the right skills.</p>
+        <p class="lead">Although Jobcase is based in Massachusetts, we have strong partnerships with nonprofits and governmental institutions across the United States. One of these partners is with Discover the Real West Virginia Foundation, an organization affiliated with the state government who works with businesses and state leadership to meet the needs of employers and workers in the state. </p>
+        <p class="lead">After seeing our success partnering with the city of Los Angeles, the DRWV Foundation approached Jobcase to design and build a portal to help workers in West Virginia discover jobs. The primary ask was a website with different tools to aid in the job search for those looking to up-skill or those who might be unfamiliar with the options that would be a good match for them despite having the right skills.</p>
       </div>
 
     </div>
@@ -82,7 +82,7 @@
 <div class="padding">
   <div class="container ">
       <h2>Final project</h2>
-            <p>The interactions below outline the core functionality and use cases for the Discover West Virginia jobs experience</p>
+            <p class="lead">The interactions below outline the core functionality and use cases for the Discover West Virginia jobs experience</p>
 
     <div class="row align-items-center" >
 
@@ -171,16 +171,19 @@
       <h3>Identifying core functionality</h3>
       <p>Based on discussions with internal stakeholders and the requirements outlined by our partner, we planned to build out three user journeys, with the career discovery portal being a major feature. We felt this was the best way to address the needs of a wide segment of the user base who may find a job search with no guidance daunting. Because many of the users would be using this to search for new career paths it made more sense to directly address the needs of those with uncertainty about their future career prospects who were interested in future work opportunities based on their skills and interests. We also determined that a key functionality would be to deliver relevant job listings post-discovery, aggregated from Jobcase and other partners.</p>
 
-            <h3>Explore career discovery approaches</h3>
+      <h3>Research</h3>
+      <p>To ensure accuracy of the results, I conducted a literature review of papers published by the U.S. Department of Labor around the different variants of the O*NET Interest Profiler. A longer, 60 question version of the quiz is provided but the 30 question version has a degree of accuracy high enough for us to feel like the trade-off on reducing the time until a user was able to see their results was appropriate.  The O*NET uses the questions to score respondents on traits of Realistic, Investigative, Artistic, Social, Enterprising, and Conventional with questions about common tasks. The categories are based on research conducted in the 1950s by psychologist John L. Holland and have been used by the U.S. Department of Labor since the 1990s. </p>
+            <p>The O*NET service also provides the framework I used for the industries grid on the job browse page. This experience allows for users to explore careers in different industries as an alternative to the interest profiler and gave us a little more flexibility as far as design went because it didn’t rely on an API.</p>
+    
+      <img src="img/wv-onet.jpg" class="img-fluid proj-photo">
+
+    <h3>Explore career discovery approaches</h3>
       <p>The main feature of the experience is a career discovery quiz that lets users quickly answer 30 questions and receive career recommendations based upon their answers. With this restriction in mind, I designed 3 options for the quiz with the goal of meeting the requirements of an user experience that is fast, fun to use, and accurate. The accuracy scores are based on the usage of a 1 to 5 scale versus a boolean scale. After a review with stakeholders, we opted to move forward with the third option of quickly tapping through screens with a series of tiles, which struck the right balance between accuracy and speed.</p>
+      <img src="img/iterations.jpg" class="img-fluid proj-photo">
 
        <h3>Executing on the career discovery quiz</h3>
       <p>The logic of the career quiz is based upon the O*NET Interest Profiler so we were restricted by the limitations of their API, which delivers text, takes input, and returns results based on the information provided. Because of this, we had to move away from a visually rich interface and went with solid tiles for the experience. </p>
 
-
-      <h3>Research</h3>
-      <p>To ensure accuracy of the results, I conducted a literature review of papers published by the U.S. Department of Labor around the different variants of the O*NET Interest Profiler. A longer, 60 question version of the quiz is provided but the 30 question version has a degree of accuracy high enough for us to feel like the trade-off on reducing the time until a user was able to see their results was appropriate.  The O*NET uses the questions to score respondents on traits of Realistic, Investigative, Artistic, Social, Enterprising, and Conventional with questions about common tasks. The categories are based on research conducted in the 1950s by psychologist John L. Holland and have been used by the U.S. Department of Labor since the 1990s. </p>
-            <p>The O*NET service also provides the framework I used for the industries grid on the job browse page. This experience allows for users to explore careers in different industries as an alternative to the interest profiler and gave us a little more flexibility as far as design went because it didn’t rely on an API.</p>
 
       <h3>Test Prototypes with Users
 </h3>
@@ -218,6 +221,7 @@
   <div class="container">
       <h2>Outcomes</h2>
       <p>The Discover West Virginia Jobs initiative saw a successful launch with Senator Joe Manchin and our CEO Fred Goff appearing together on a live streamed launch on August 28, 2019. This was paired with a press release from Jobcase which was subsequently picked up by several local media outlets in West Virginia. Thousands of visitors completed the self-assessment in the first week and the initiative boosted Jobcase visibility within the state and has been used as an effective tool to promote partnerships with other organizations since launch.</p>
+      <img src="img/wv-press.jpg" class="img-fluid proj-photo">
 
   </div>
 </div>
