@@ -86,7 +86,7 @@ header .overlay {
 }
 .hero-bg {
 
-    background: url(img/gradient-bg.png) center center scroll;
+    background: url(img/gradient-bg.png) #2cd6ff center center scroll;
 
 
 }
@@ -118,12 +118,17 @@ padding-bottom: 10px;
     font-size: 8em ; 
     margin-left: -8px;
     padding-bottom: 36px;
+    padding-top: 100px;
 }
 
 @media only screen and (max-width: 600px) {
     .name {
-  font-size: 4em; 
+  font-size: 4.5em; 
   margin-left: -4px;
+
+    padding-top: 100px;
+
+    padding-bottom: 10px;
 
   }
 }
@@ -136,6 +141,7 @@ vertical-align: .1em;
 .subhead {
 
     padding-top: 0px;
+
 }
 
   h1 {
