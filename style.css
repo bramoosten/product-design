@@ -86,7 +86,11 @@ header .overlay {
 }
 .hero-bg {
 
+    background: rgb(66,228,253);
+background: linear-gradient(180deg, rgba(66,228,253,1) 0%, rgba(75,152,224,1) 70%, rgba(121,113,191,1) 100%);
     background: url(img/memphis-geometry.png) center center scroll, url(img/gradient-bg.png) center center scroll;
+
+
 
 
 }
