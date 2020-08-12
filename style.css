@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
+@import url('https://fonts.googleapis.com/css?family=Jost:300,400,500,700');
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Martel:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Teko:wght@500&display=swap');
+@import url('Soulcraft.ttf');
 
 html,
 body {
@@ -33,6 +35,9 @@ body {
 
 
 }
+
+
+
 header {
   position: relative;
   background-color: #29353C;
@@ -88,9 +93,11 @@ header .overlay {
 
 }
 .hero-bg {
- background: url(img/memphis-geometry.png) center center scroll, url(img/gradient-bg.png) center center scroll, linear-gradient(180deg, rgba(66,228,253,1) 0%, rgba(75,152,224,1) 70%, rgba(121,113,191,1) 100%);
 
+ background: url(img/saw.svg) 100% 100% scroll no-repeat, url(img/scoop.svg) 10% -200px  scroll no-repeat,  url(img/sun.svg) 90% -50px scroll no-repeat #007BC7;
+  background-size: 70%, 50%, 20%;
 
+/* background: url(img/memphis-geometry.png) center center scroll, url(img/gradient-bg.png) center center scroll, linear-gradient(180deg, rgba(66,228,253,1) 0%, rgba(75,152,224,1) 70%, rgba(121,113,191,1) 100%);*/
 
 
 }
@@ -119,22 +126,57 @@ padding-bottom: 10px;
  
   .name {
 
-    font-size: 8em ; 
-    margin-left: -8px;
-    padding-bottom: 36px;
-    padding-top: 100px;
+    font-size: 7em ; 
+    margin-left: -4px;
+    font-family: 'Soulcraft', sans-serif;
+    font-weight: 800;
+    font-variation-settings: 'wdth' 100;
+    padding-top: 25px;
+    padding-bottom: 10px;
+
+
+}
+
+.bio {
+
+  font-size: 1.5em;
+  line-height: 150% !important;
+  font-weight: 300 !important;
+  color: rgba(255,255,255,0.75);
+
 }
 
 @media only screen and (max-width: 600px) {
     .name {
   font-size: 4.5em; 
   margin-left: -4px;
+    font-variation-settings: 'wdth' 50;
 
-    padding-top: 100px;
+    padding-top: 15px;
 
     padding-bottom: 10px;
 
   }
+
+   .bio {
+  font-size: 1.15em; 
+  line-height: 150% !important;
+  font-weight: 300 !important;  
+  margin-left: -4px;
+
+
+  }
+
+  .hero-bg {
+
+ background: url(img/saw.svg) 100px 100% scroll no-repeat, url(img/scoop.svg) -50px 0%  scroll no-repeat,  url(img/sun.svg) 100% -50px scroll no-repeat #007BC7;
+  background-size: 100%, 70%, 30%;
+
+/* background: url(img/memphis-geometry.png) center center scroll, url(img/gradient-bg.png) center center scroll, linear-gradient(180deg, rgba(66,228,253,1) 0%, rgba(75,152,224,1) 70%, rgba(121,113,191,1) 100%);*/
+
+
+}
+
 }
 
 
@@ -199,7 +241,7 @@ a {
   font-style: normal;
   color: #4d4d4d;
 
-}
+} 
 
   .btn-fix {
   font-family: 'Jost', sans-serif;
