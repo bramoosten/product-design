@@ -138,6 +138,7 @@ padding-bottom: 10px;
     font-variation-settings: 'wdth' 100;
     padding-top: 25px;
     padding-bottom: 10px;
+    transition: font-variation-settings 500ms ease;
 
 }
 
@@ -147,6 +148,8 @@ padding-bottom: 10px;
   line-height: 150% !important;
   font-weight: 300 !important;
   color: rgba(255,255,255,0.75);
+    transition: font-size 500ms ease;
+
 
 }
 
@@ -175,6 +178,8 @@ padding-bottom: 10px;
 
  background: url(img/saw.svg) 100px 100% scroll no-repeat, url(img/scoop.svg) -50px 0%  scroll no-repeat,  url(img/sun.svg) 100% -50px scroll no-repeat #007BC7;
   background-size: 100%, 70%, 30%;
+  transition: background 1000ms ease;
+
 
 /* background: url(img/memphis-geometry.png) center center scroll, url(img/gradient-bg.png) center center scroll, linear-gradient(180deg, rgba(66,228,253,1) 0%, rgba(75,152,224,1) 70%, rgba(121,113,191,1) 100%);*/
 
