@@ -164,12 +164,20 @@ padding-bottom: 10px;
 
   }
 
+
    .bio {
-  font-size: 1.15em; 
+  font-size: 1.25em; 
   line-height: 150% !important;
   font-weight: 300 !important;  
   margin-left: -4px;
 
+
+  }
+}
+
+@media only screen and (max-width: 320px) {
+    .arrow {
+  display: none;
 
   }
 
