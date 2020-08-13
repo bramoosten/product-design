@@ -173,7 +173,7 @@ padding-bottom: 10px;
 }
   .hero-bg {
 
- background: url(img/saw.svg) 100px 100% scroll no-repeat, url(img/scoop.svg) 0px 0%  scroll no-repeat,  url(img/sun.svg) 100% -50px scroll no-repeat #007BC7;
+ background: url(img/saw.svg) 100px 100% scroll no-repeat, url(img/scoop.svg) -50px 0%  scroll no-repeat,  url(img/sun.svg) 100% -50px scroll no-repeat #007BC7;
   background-size: 100%, 70%, 30%;
   transition: background 1000ms ease;
 
