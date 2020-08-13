@@ -170,20 +170,10 @@ padding-bottom: 10px;
   line-height: 150% !important;
   font-weight: 300 !important;  
   margin-left: -4px;
-
-
-  }
 }
-
-@media only screen and (max-width: 320px) {
-    .arrow {
-  display: none;
-
-  }
-
   .hero-bg {
 
- background: url(img/saw.svg) 100px 100% scroll no-repeat, url(img/scoop.svg) -50px 0%  scroll no-repeat,  url(img/sun.svg) 100% -50px scroll no-repeat #007BC7;
+ background: url(img/saw.svg) 100px 100% scroll no-repeat, url(img/scoop.svg) 0px 0%  scroll no-repeat,  url(img/sun.svg) 100% -50px scroll no-repeat #007BC7;
   background-size: 100%, 70%, 30%;
   transition: background 1000ms ease;
 
@@ -192,6 +182,14 @@ padding-bottom: 10px;
 
 
 }
+
+  }
+
+@media only screen and (max-width: 320px) {
+    .arrow {
+  display: none;
+
+  }
 
 }
 
