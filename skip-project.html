@@ -9,13 +9,15 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
   <script src="https://use.fontawesome.com/releases/v5.12.1/js/all.js"></script>
+    <script src="sidebar-logic.js"></script>
+
   <link href="style.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://use.typekit.net/hix4uzk.css">
 </head>
 
-<body>
+<body style="position: relative;">
 
 <nav class="navbar navbar-expand-md navbar-dark custom-bg sticky-top">
   <div class="container">
@@ -67,23 +69,51 @@
 </header>
 
 
-<div class="padding">
-  <div class="container">
-    <div class="row align-items-center ">
-      <div class="col-sm-12 ">
-        <h2>Summary</h2>
-        <p class="">In the Spring of 2020, with unemployment in the United States at record numbers and the workforce facing increasing hurdles ahead to return to work, the Jobcase product team was tasked with addressing the issue of getting millions of employees in the service and labor sectors back to work in short period of time, necessitating a new approach to hiring at scale. The challenge posed was that employers would struggle to process the volume of returning applicants and Skip would serve in place of manually reviewing resumes by the tens of thousand.</p>
-        <p class="">The result was called Skip by Jobcase, app that allows workers to build a profile, provide some information about their interest and abilities, and complete a background check, all in about 10 minutes. The profile would then be matched against jobs avaible within the partner company's database and the worker is automatically sent opportunities they're eligible for in the form of job invitations. This solution was meant to introduce a level of automation that wasn't previously adopted to within many of the medium to large scale employers Jobcase works with and better serve the needs of the users.</p>
-      </div>
 
+<div class="padding">
+  <div class="container-fluid" style="max-width: 768px"> 
+        <h2><br>01. Overview</h2>
+        <p class="">In the Spring of 2020, with unemployment in the United States at record numbers and the workforce facing increasing hurdles ahead to return to work, the Jobcase product team was tasked with addressing the issue of getting millions of employees in the service and labor sectors back to work in short period of time, necessitating a new approach to hiring at scale. The challenge posed was that employers would struggle to process the volume of returning applicants and Skip would serve in place of manually reviewing resumes by the tens of thousand.</p>
+              <p>
+                The result was called Skip by Jobcase, app that allows workers to build a profile, provide some information about their interest and abilities, and complete a background check, all in about 10 minutes. The profile would then be matched against jobs avaible within the partner company's database and the worker is automatically sent opportunities they're eligible for in the form of job invitations. This solution was meant to introduce a level of automation that wasn't previously adopted to within many of the medium to large scale employers Jobcase works with and better serve the needs of the users.</p>
+<div class="row">
+    <div class="col-sm-6">
+          <h3>Summary</h3>
+      <p class="">
+              An app for iOS and Android devices that fits within the Jobcase brand portfolio and allows users to find and apply to relevant jobs after completing a short enrollment flow. This saves time for prospective emplyees and employers.</p>
 
     </div>
+    <div class="col-sm-6">
+                <h3>Requirements</h3>
+      <p class="">
+              From download to employment offer the app must deliver a job search experience that is easy, encouraging, and delightful. It should be extensible to the needs of partners and employers.</p>
+    </div>
+      </div>
+
+   <div class="row">
+    <div class="col-sm-6">
+
+    <h3>Role</h3>
+      <p class="">
+              I was responsible for creating the onboarding, job preferences, and home experiences. I worked with collaborators to finalize the profile and job search. </p>
+    </div>
+    <div class="col-sm-6">
+          <h3>Duration</h3>
+
+      <p>The initial phase of the project lasted from March 2020 through June 2020, approximately 3 months. The  beta was launched during the last week of June.
+</p></div>
+      </div>
+
+    </div>
+
   </div>
-</div>
+
 <div class="padding">
-  <div class="container ">
-      <h2>Final Project</h2>
+  <div class="container-fluid" style="max-width: 768px"> 
+      <h2>02. Final Project</h2>
             <p class="">Below are key screens and interactions within the final Skip by Jobcase app that I was responsible for designing. My role within the team was largely focused on the jobseeker side so the steps presented below reflect that.</p>
+</div>
+  <div class="container-fluid" style="max-width: 1280px"> 
 
     <div class="row align-items-center" >
       <div class="col-md-9  order-md-2">
@@ -131,12 +161,13 @@
     </div>         
   </div>
 </div>
-<div class="padding ">
-  <div class="container">
-  <h2>Background</h2>
+<!-- 
+<div class="">
+  <div class="container-fluid" style="max-width: 768px"> 
+  <h2>03. Background</h2>
          <div class="row">
     <div class="col-sm-6">
-          <h3>Overview</h3>
+          <h3>Summary</h3>
       <p class="">
               An app for iOS and Android devices that fits within the Jobcase brand portfolio and allows users to find and apply to relevant jobs after completing a short enrollment flow. This saves time for prospective emplyees and employers.</p>
 
@@ -165,13 +196,34 @@
     </div>
   </div>
 
+-->
+
+<div class="">
+  <div class="container-fluid" style="max-width: 768px"> 
+      <h2><br>03. Design process</h2>
+      <h3>I. Understanding the problem</h3>
+      <p>While we were focusing on the immediate needs of workers providing unemployment resources and resources to navigate COVID-19, we gathered qualitative intelligence from partners and members of the Jobcase community about the long term realities of mass unemployment. What happens to the existing employment infrastructure when millions of workers need to fill millions of openings in a short period of time?</p>
+      <p>The Jobcase social community is where users can participate to ask for help and provide advice to others. It was valuable in understanding the day-to-day struggles of the members we're working to help and allowed us to get a current pulse of the user problems. At the time the Skip initiative was taking off, we were seeing many thousands affected by unemployment. Through internal data we knew that most of our user base was composed of service workers, a finding that allowed us to target the final offering to a servable niche.</p>
+      <p>Below are just a few of the conversations users had posted as unemployment swelled.</p>
+</div>
+</div>
+<div class="">
+  <div class="container-fluid" style="padding: 20px 0; margin:0px;"> 
+
+      <figure class="figure">
+  <img src="img/unemployment.png" class="figure-img img-fluid rounded" alt="Thousands of users expressed frustration with unemployment within the Jobcase community." style="">
+</figure>
+</div>
+</div>
+<div class="">
+  <div class="container-fluid" style="max-width: 768px"> 
+      <p>The volume of workers experiencing unemployment was an issue not just for Jobcase users, but employers as well. As a two-sided marketplace Jobcase works directly with companies looking to hire staff, especially those hiring at scale. Because a typical hire can take four to six weeks and dozens of working hours, the business implications of following the traditional hiring process for this large spike of applicants would result in major disadvantages for both parties. This provided an opportunity to target the inefficiencies by reducing the through a centeralized verification system.</p>
+
+      <p>The graphs below show the trends of unemployment in the United States at this time. The assumption was made that the drop to low umemployment would continue precipitously through the summer and fall, eventually coming close to matching the numbers of early spring.</p>
+
+            <img src="img/unemployment-numbers.png" class="img-fluid proj-photo">
 
 
-<div class="padding">
-  <div class="container">
-      <h2>Design process</h2>
-      <h3>Survey of the landscape</h3>
-      <p>While we were focusing on the immediate needs of workers providing unemployment resources and resources to navigate COVID-19, the organization gathered qualitative intelligence from partners and members of the Jobcase community about the long term realities of mass unemployment. What happens to the existing employment infrastructure when millions of workers need to fill millions of openings in a short period of time?</p>
 <!--
       <p>Initial research steps involved the following:</p>
 
@@ -181,46 +233,62 @@
   <li class="list-fix">Nulla volutpat</li>
 </ul>
 
-<figure class="figure">
-  <img src="img/unemployment.png" class="figure-img img-fluid rounded" alt="Thousands of users expressed frustration with unemployment within the Jobcase community.">
-</figure>
 -->
 
-            <h3>Develop concept</h3>
-      <p>The idea was hatched to build an experience that addressed two key issues a two-sided job market would be facing 6-12 months from now. For the worker, sending out many applications with similar information and waiting for background checks from each before receiving an offer, delaying their time to start by weeks and introducing unnecessary complexity to the job search. For the employer, the time and resources required to hire and onboard can be substantial and the process doesn’t scale easily.</p>
+      <h3>II. Sketching and solution development</h3>
+      <p>The challenge outlined above was expanded into the directive build an experience that addressed two key issues a two-sided job market would be facing 6-12 months from now. For the worker, sending out many applications with similar information and waiting for background checks from each before receiving an offer, delaying their time to start by weeks and introducing unnecessary complexity to the job search. For the employer, the time and resources required to hire and onboard can be substantial and the process doesn’t scale easily.</p>
 
-       <h3>Identify partner integration areas</h3>
 
-       <!--<figure class="figure" style="max-width: 500px;">
-  <img src="img/unemployment.png" class="figure-img img-fluid rounded" alt="Thousands of users expressed frustration with unemployment within the Jobcase community.">
-</figure>
-
-<img src="img/newspaper-ad-urban-JC-WD-NUL.jpg" class="rounded float-right proj-photo p-4" style="max-width: 500px;"> -->
-      <p>While Jobcase excels at some aspects of the candidate acquisition process, blindspots in the background check and applicant tracking steps necessitated a partnership with First Advantage and Workday,  industry-leading players in the human capital space. A key challenge in designing the Skip experience was integrating the First Advantage and Workday capabilities in an app that feels consistent while serving the needs of all stakeholders involved.                   
+<img src="img/newspaper-ad-urban-JC-WD-NUL.jpg" class="img-fluid float-right m-3" style="width: 50%;">
+      <p>Identifying partner integration areas proved essential for the project as well. While Jobcase excels at some aspects of the candidate acquisition process, blindspots in the background check and applicant tracking steps necessitated a partnership with First Advantage and Workday,  industry-leading players in the human capital space. A key challenge in designing the Skip experience was integrating the First Advantage and Workday capabilities in an app that felt consistent to the core Jobcazse experience while serving the business needs of all parties involved.                   
 </p>
+            <p><img src="img/resume-upload.png" class="img-fluid float-left" style="width: 40%;">For other features such as the ability to upload a resume within the app to be used as a quick way to build one's profile a I conducted surveys with various groups to determine if an addition would be worth the development resources for a core user base.</p>
+
+            <p>In addition to the value proposition of an expedited hiring process we felt that a social proof component could be valuable, especially as a way to pique the curioiusty of those with accounts active in the Jobcase community (a type of forum for job seekers.) Looking at the verification badge systems of other platforms I designed a badge that would be appended to a user's display name as a way to indiciate that this user had completed the steps necessary for validation and should be viewed by users and employers as ready to work. This has the product marketing benefit of a visible but subtle promotion within a part of the business that has already seen traction.</p>
+            <img src="img/wireframes.png" class="img-fluid">
 
 
-      <h3>Build wireframes for client approval</h3>
-      <p>With the problems, audience, and broad capabilities outlined, myself and a collaborator built 30-40 low fidelity wireframes to share with stakeholders for feedback and later approval. Beyond business stakeholders we worked and negotiated with technical leads for features and particular visual effects. This step also involved establishing the primary steps flow, profile navigation, log-in experience, job search integration.</p>
-
-      <h3>Develop high fidelity mocks and begin building</h3>
-      <p>The wireframes were designed into high fidelity screens with input from product and design leadership. We ensured consistency with our existing experiences with a pattern library. Due to the aggressive timeline we parallized the design and development process with engineering working on screens we were finalizing the day of. This helped accelerate the time to live at the loss of some efficiency with elements that were dropped or changed substantially.</p>      
-                        <img src="img/sketch.png" class="img-fluid proj-photo">
+      <p> With the problems, audience, and broad capabilities outlined, myself and a collaborator built low fidelity wireframes (some pictured above) to share with stakeholders for feedback and later approval. Beyond business stakeholders we worked and negotiated with technical leads for features and particular visual effects. This step also involved establishing the primary steps flow, profile navigation, log-in experience, job search integration.</p>
 
 
-      <h3>Feedback cycles</h3>
-      <p>In addition to the design feedback we gathered, dispositioned, and executed on, I worked closely with the developers to provide regular feedback on the app build. This involved reviewing daily builds of the app and writing detailed notes to ensure that the final experience matched the level of polish expected from stakeholders and modern consumers.</p>
 
-      <h3>User testing</h3>
-      <p>I conducted eight remote sessions of our first major beta release through Zoom to collect feedback from users within our organization and with jobseekers whose employment was affected by the pandemic. This step largely validated initial assumptions but provided some insight and ideas for future iterations. </p>
-            <img src="img/Image 7-4-20 at 5.05 PM.jpg" class="img-fluid proj-photo">
+      <h3>III. Designing the experience</h3>
+      <p>The wireframes were designed into high fidelity screens with input from product and design leadership. We ensured consistency with existing Jobcase experiences by utilizing a pattern library while introducing components like the "Skip badge" to distinguish this from the primary Jobcase experience.</p>  
+
+      </div>
+      </div>
+<div class="container-fluid" style="max-width: 1280px"> 
+
+            <img src="img/sketch.png" class="img-fluid">
+</div>
+<div class="">
+  <div class="container-fluid" style="max-width: 768px"> 
+      <p>Special attention was paid to the visual design with an eye towards delight, encouragement, and softness as ways to promote feelings of optimism and positivity <video class="img-fluid float-right m-3" style="width: 40%;" playsinline autoplay muted loop><source src="img/confetti.mp4" type="video/mp4"></video>within a context that might otherwise be viewed as stressful (job hunting during a pandemic).</p>
+
+        <p>
+Amorphous pastel blue shapes are present throughout the backgrounds of the app and animations like falling confetti were added when a user completes their enrollment step and applies for their first job. In discussions with users, they felt positively about these additions and noted that it felt different from a normal job search app because of flourishes like the ones mentioned. The video to the right shows an early build of the confetti, with padding to be fixed at in a subsequent release.</p>
+
+<p>Custom illustrations were commissioned for .</p>
+
+</div>
+</div>
+
+
+  <div class="container-fluid padding" style="max-width: 768px"> 
+
+      <h3>IV. Implementing the solution</h3>
+      <p>Due to the aggressive timeline we parallized the design and development process with engineering working on screens we were finalizing the day of. This helped accelerate the time to live at the loss of some efficiency with elements that were dropped or changed substantially.
+            <p>In addition to the design feedback we gathered, dispositioned, and executed on, I worked closely with the developers to provide regular feedback on the app build. This involved reviewing daily builds of the app and writing detailed notes to ensure that the final experience matched the level of polish expected from stakeholders and modern consumers.</p>
+
+      <h3>VI. Evaluating and iterating</h3>      
+      <p>I conducted eight remote sessions of our first major beta release through Zoom to collect feedback from users within our organization and with jobseekers whose employment was affected by the pandemic. This step largely validated initial assumptions but provided valuable insight into areas during the enrollment that would benefit from being streamlined or removed. </p>
+            <img src="img/user-testing.jpg" class="img-fluid">
 
   </div>
 </div>
-
 <div class="padding">
-  <div class="container">
-      <h2>Challenges</h2>
+  <div class="container-fluid" style="max-width: 768px"> 
+      <h2><br>04. Challenges</h2>
       <h3>Fully remote team</h3>
       <p>The Skip by Jobcase app was the first major project we took on as a remote team. Daily Zoom meetings and regular check-ins were an effective way to keep all team members on top of changes. It did expose drawbacks in our design collaboration and handoff tools that I hope to investigate solutions to for future projects. </p>
 
@@ -234,8 +302,8 @@
 </div>
 
 <div class="padding">
-  <div class="container">
-      <h2>Outcomes</h2>
+  <div class="container-fluid" style="max-width: 768px"> 
+      <h2>05. Outcomes</h2>
       <p>We were able to finalize the app in less than two months and had interested company partners pending in addition to existing partners like First Advantage, The National Urban League, and Workday. Due to a change in the go-to-market strategy, leadership made the decision to refocus efforts from the Skip app onto a full-featured Jobcase app for launch in the fall of 2020 that incorporates elements from the Skip project.</p>
             <img src="img/Image 7-4-20 at 4.59 PM.jpg" class="img-fluid">
 
@@ -330,9 +398,6 @@
     </div>
 </figure>
 -->
-
-
-
 
 
 </body>
