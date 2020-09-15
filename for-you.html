@@ -3,19 +3,21 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Bram Oosten</title>
+  <title>For You</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
   <script src="https://use.fontawesome.com/releases/v5.12.1/js/all.js"></script>
+    <script src="sidebar-logic.js"></script>
+
   <link href="style.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://use.typekit.net/hix4uzk.css">
 </head>
 
-<body>
+<body style="position: relative;">
 
 <nav class="navbar navbar-expand-md navbar-dark custom-bg sticky-top">
   <div class="container">
@@ -31,7 +33,7 @@
   <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Projects</a>
     <div class="dropdown-menu">
-      <a class="dropdown-item " href="skip-project.html">Skip by Jobcase</a>
+      <a class="dropdown-item" href="skip-project.html">Skip by Jobcase</a>
       <a class="dropdown-item active" href="for-you.html">For You</a>
       <a class="dropdown-item" href="west-virginia.html">Discover WV Jobs</a>
       <a class="dropdown-item" href="email-projects.html">Email Promotions</a>      
@@ -42,7 +44,7 @@
                 <li class="nav-item ">
           <a class="nav-link" target="_blank" href="oosten-resume.pdf">Resume</a>
         </li>
-        </ul>                         
+        </ul>                        
     </div>
   </div>
 
@@ -50,7 +52,6 @@
 
 
 <!--- Jumbotron -->
-
 <header class="fy-gradient">
   <div class="overlay"></div>
   <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
@@ -58,30 +59,61 @@
   </video>
   <div class="container h-100">
     <div class="d-flex h-100 text-center align-items-center">
-      <div class="w-100 text-white">
-          <h1 class="text-white" style="">For You</h1>
+      <div class="text-white" style="max-width: 600px; margin: auto">
+          <h1 class="text-white display-3" style="">For You</h1>
 
-            <p class="text-light lead subhead">A curated feed for Jobcase users to easily access the jobs, conversations, and resources most relevant to them.</p>      </div>
-    </div>
-  </div>
-</header>
-<div class="padding">
-  <div class="container p-5">
-    <div class="row align-items-center">
-      <div class="col-sm-12">
-        <h2>Summary</h2>
-        <p class="">In an initiative to increase engagement of regular Jobcase members, the For You page was created as an experience that makes it easy and delightful to engage with and access different offerings from Jobcase experts and the Jobcase community. The For You page serves as the home for returning members and is a flexible framework for testing and introducing new features and content types.</p>
-        <p class="">Previously, the only way to engage with Jobcase was through a single feed which made it difficult for those who were new to the site to understand the extent of the value it can provide. It also siloed the most popular featues of Jobcase making it unnecessarily complicated to browse and engage in the areas you're most interested in in a single session. The For You page serves as both a community portal allowing users to enter or return to their social circles within the Jobcase feed, product marketing showing off new features, and a promotional platform for partners and resources. </p>
+            <p class="text-light lead subhead" style="padding-top: 20px;">A curated feed for Jobcase users to easily access the jobs, conversations, and resources most relevant to them.</p>
       </div>
     </div>
   </div>
-</div>
-<hr>
+</header>
+
+
 
 <div class="padding">
-  <div class="container p-5">
-      <h2>Final Project</h2>
+  <div class="container-fluid" style="max-width: 768px"> 
+        <h2><br>01. Overview</h2>
+        <p class="">In an initiative to increase engagement of regular Jobcase members, the For You page was created as an experience that makes it easy and delightful to engage with and access different offerings from Jobcase experts and the Jobcase community. The For You page serves as the home for returning members and is a flexible framework for testing and introducing new features and content types.</p>
+              <p>
+                Previously, the only way to engage with Jobcase was through a single feed which made it difficult for those who were new to the site to understand the extent of the value it can provide. It also siloed the most popular featues of Jobcase making it unnecessarily complicated to browse and engage in the areas you're most interested in in a single session. The For You page serves as both a community portal allowing users to enter or return to their social circles within the Jobcase feed, product marketing showing off new features, and a promotional platform for partners and resources.</p>
+<div class="row">
+    <div class="col-sm-6">
+          <h3>Overview</h3>
+      <p class="">
+              A single page on the Jobcase website built to handle a significant amount of community and editorial content, job and user recommendations, and links to high-quality resource pages and articles.</p>
+
+    </div>
+    <div class="col-sm-6">
+                <h3>Requirements</h3>
+      <p class="">
+              The For You page must be mobile-first and should work as a framework that allows leadership to test new carousels, shelves, and cards while serving up best experience Jobcase has to offer.</p>
+    </div>
+      </div>
+
+   <div class="row">
+    <div class="col-sm-6">
+
+    <h3>Role</h3>
+      <p class="">
+              I served as the design lead for the For You page, ideating and presenting concepts, conducting user tests, iterating on designs, and providing guidance and direction on the development. </p>
+    </div>
+    <div class="col-sm-6">
+          <h3>Duration</h3>
+
+      <p>For You was initially launched after approximately six weeks of design and development and continues to see regular iterations as new features are added to the Jobcase experience.
+</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+<div class="padding">
+  <div class="container-fluid" style="max-width: 768px"> 
+      <h2>02. Final Project</h2>
             <p class="">Demonstrating the user journey of someone who has used the platform before and returns to For You to catch up on new content.</p>
+</div>
+  <div class="container-fluid" style="max-width: 1280px"> 
 
     <div class="row align-items-center" >
       <div class="col-md-9 order-md-2">
@@ -127,22 +159,26 @@
     </div>         
   </div>
 </div>
-<hr>
 
-<div class="padding ">
-  <div class="container p-5">
-  <h2>Background</h2>
+     
+    </div>         
+  </div>
+</div>
+<!-- 
+<div class="">
+  <div class="container-fluid" style="max-width: 768px"> 
+  <h2>03. Background</h2>
          <div class="row">
     <div class="col-sm-6">
-          <h3>Overview</h3>
+          <h3>Summary</h3>
       <p class="">
-              A single page on the Jobcase website built to handle a significant amount of community and editorial content, job and user recommendations, and links to high-quality resource pages and articles.</p>
+              An app for iOS and Android devices that fits within the Jobcase brand portfolio and allows users to find and apply to relevant jobs after completing a short enrollment flow. This saves time for prospective emplyees and employers.</p>
 
     </div>
     <div class="col-sm-6">
                 <h3>Requirements</h3>
       <p class="">
-              The For You page must be mobile-first and should work as a framework that allows product leadership to easily test new carousels, shelves, and cards while serving up the best experience Jobcase has to offer.</p>
+              From download to employment offer the app must deliver a job search experience that is easy, encouraging, and delightful. It should be extensible to the needs of partners and employers.</p>
     </div>
       </div>
 
@@ -151,76 +187,206 @@
 
     <h3>Role</h3>
       <p class="">
-              I served as the design lead for the For You page, ideating and presenting concepts, conducting user tests, iterating on designs, and providing guidance and direction on the development. </p>
+              I was responsible for creating the onboarding, job preferences, and home experiences. I worked with collaborators to finalize the profile and job search. </p>
     </div>
     <div class="col-sm-6">
           <h3>Duration</h3>
 
-      <p>For You was initially launched after approximately 6 weeks of design and development and continues to see regular iterations as the product vision shifts and new features are added to the Jobcase experience.
+      <p>The initial phase of the project lasted from March 2020 through June 2020, approximately 3 months. The  beta was launched during the last week of June.
 </p></div>
       </div>
 
     </div>
   </div>
 
-<hr>
+-->
 
-<div class="padding ">
-  <div class="container p-5">
-      <h2>Design process</h2>
-      <h3>User research</h3>
-      <p>In exploratory in-person interviews with five existing users we worked to develop an understanding of the challenges and obstacles they face within the their job search and map those challenges to features in the product that could reduce friction to addressing those challenges. We also gathered feedback on features of the product that users found value in so we could know where to prioritize those in future iterations of the experience. Our </p>
+<div class="">
+  <div class="container-fluid" style="max-width: 768px"> 
+      <h2><br>03. Design process</h2>
+      <h3>I. Understanding the user and problems</h3>
 
+      <p>In exploratory in-person interviews with five existing users we worked to develop an understanding of the challenges and obstacles they face within their job search and       
+mapped those challenges to features in the product that could reduce friction to addressing <img src="img/IMG_7423.jpg" class="img-fluid float-right m-3" style="width: 50%;">those challenges. We also gathered feedback on features of the existing product that users found value in so we could know where to prioritize those in future iterations of the experience. The image to the right shows part of this process, with a colleague adding to a board of observations gleaned during interviews.</p>
 
-      <h3>Expand on use cases</h3>
-      <p>Working with the lead Product Manager, we identified weaknesses in the existing community feed design and areas where we felt the most improvement was possible. Building on this evaluation, key measures of success were established to ensure the new design was going to best serve our users and the business goals of the organization. Through this, the new design was to focus on improved personalization and customization, promotion of high quality editorial content, a degree of product marketing for new users, and content creation.</p>
+      
 
-            <h3>Build framework</h3>
+      <p>We identified weaknesses in the existing community feed design and areas where we felt the most improvement was possible. Building on this evaluation, key measures of success were established to ensure the new design was going to best serve our users and the business goals of the organization. Through this, the new design was to focus on improved personalization and customization, promotion of high quality editorial content, a degree of product marketing for new users, and content creation.</p>
+
+      <h3>II. Solution development</h3>      
       <p>With future extensibility and rapid testing being major considerations for the build, I settled on a modular card and shelf design that would allow for carousels and fit within a grid system for optimal responsiveness and usability. Each card could take conversations, editorial content, job listings, or promotions and have variants depending on the importance or quality. From there, the cards could be formatted into different sizes or interted into a group as an interactive carousel. This high degree of flexibility made it so that the density of content could easily be controlled and allowed for future card types to be developed to fit into the framework. The diagram below shows three different ways an article card can us used in this system.</p>
-        <img src="img/grid-system.png" class="img-fluid proj-photo">
+</div>
+</div>
+<div class="">
+  <div class="container-fluid" style="padding: 20px 0; margin:0px;"> 
+
+      <figure class="figure">
+  <img src="img/grid-system-wide.jpg" class="figure-img img-fluid rounded" alt="A 12-column grid." style="">
+</figure>
+</div>
+</div>
+<div class="">
+  <div class="container-fluid" style="max-width: 768px"> 
+      <p>Many rounds of designs were considered as we explored possibilities and worked to ensure what was built would stand as a solid foundation for future improvements and maintained a connection to the existing experience of the site. Some stakeholders were worried about the deemphasis of content contribution so a pivot shelf was introduced for some views to help users navigate and better understand the product offerings. Adjustments were made and additional shelves were built to address the feedback.</p>
+
+      <p><img src="img/pivot-options.png" class="img-fluid float-left mr-2" style="width: 60%"> Because of the modularity of the design, changes and additions like a new card prompting users to respond to posts were easy to add and remove. We also started incorporating shelves more oriented towards new users so the valuable real estate of a home page could be used for education and product marketing.</p>
 
 
-       <h3>Prototype and iterate on designs</h3>
-      <p>Several rounds of designs were considered as we explored possibilities and worked to ensure what was built would stand as a solid foundation for future improvements and maintained a connection to the existing experience of the site. Some stakeholders were worried about the deemphasis of content contribution and the feeling of some content, for example a full width here, being too disconnected from the body. Adjustments were made and additional shelves were built to address the feedback. Because of the modularity of the design, changes and additions like a new card prompting users to respond to posts were easy to add and remove.</p>
+      <h3>III. Prototyping and validation</h3>
+      <p>The broad concept of clustering of cards matured into a set of 10 purpose-driven shelves that we felt would deliver an engaging experience and be managable to build and test on: </p></div>
+    </div>
+    <div class="">
+  <div class="container-fluid align-items-center" style="padding: 20px 0; margin:auto; max-width: 1280px;"> 
 
 
-      <h3>Early user testing</h3>
+<table class="table ">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Shelf Design</th>
+      <th scope="col">Shelf Type</th>
+      <th scope="col">Purpose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td><img src="img/log-in-banner.png" class="img-fluid" style="max-width: 500px;"></td>
+      <td>Banner</td>
+      <td>Opportunity to provide messaging for new users and promote new features to existing users</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td><img src="img/log-in.png" class="img-fluid" style="max-width: 500px;"></td>
+      <td>Stacked Banner</td>
+      <td>Same as above but without the need for a graphic</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td><img src="img/pivot.png" class="img-fluid" style="max-width: 500px;"></td>
+      <td>Action tiles</td>
+      <td>Allows several actions to be promoted in one shelf</td>
+    </tr>
+    <tr>
+      <th scope="row">4</th>
+      <td><img src="img/topics.png" class="img-fluid" style="max-width: 500px;"></td>
+      <td>Topic carousel</td>
+      <td>Leads users to follow and explore topics</td>
+    </tr>
+    <tr>
+      <th scope="row">5</th>
+      <td><img src="img/hashtags.png" class="img-fluid" style="max-width: 500px;"></td>
+      <td>Hashtag carousel</td>
+      <td>Leads users to follow and explore user-generated hashtags</td>
+    </tr>     
+    <tr>
+      <th scope="row">6</th>
+      <td><img src="img/jobs.png" class="img-fluid" style="max-width: 500px;"></td>
+      <td>Jobs two-by-two</td>
+      <td>Grid of tiles to surface job recommendations</td>
+    </tr>  
+        <tr>
+      <th scope="row">7</th>
+      <td><img src="img/trending.png" class="img-fluid" style="max-width: 500px;"></td>
+      <td>Trending conversations</td>
+      <td>Grouping of two popular conversations</td>
+    </tr>      
+    <tr>
+      <th scope="row">8</th>
+      <td><img src="img/featured.png" class="img-fluid" style="max-width: 500px;"></td>
+      <td>Featured conversation</td>
+      <td>Single conversation or article</td>
+    </tr>      
+    <tr>
+      <th scope="row">9</th>
+      <td><img src="img/articles.png" class="img-fluid" style="max-width: 500px;"></td>
+      <td>Article cluster</td>
+      <td>For editorial content with curated images</td>
+    </tr>
+    <tr>
+      <th scope="row">10</th>
+      <td><img src="img/no-dead-ends.png" class="img-fluid" style="max-width: 500px;"></td>
+      <td>"No Dead Ends"</td>
+      <td>A solution to direct users towards more offerings on the platform</td>
+    </tr>        
+</table>
+</div></div>
+<div class="">
+  <div class="container-fluid" style="max-width: 768px"> 
+
       <p>The prototypes were tested with existing users after a clear direction and viable product was established with internal stakeholders. The exercise included exploratory questions like how the participant uses the platform currently, where the platform fits into their existing job search, and what they felt was missing or lacking from the existing experience. We then got detailed feedback on the interface, usability, and the order of the content with a card sorting exercise.</p>
-      <img src="img/IMG_9418.png" class="img-fluid proj-photo">
 
-      <h3>Work with development team to build</h3>
-      <p>With the quantitative feedback gathered and high fidelity mockupss created, I worked with a team of five developers to begin building out the components using Zeplin as a handoff tool, with daily standups and frequent in-person review cycles essential to bringing the concept to the screen. As this project was part of the transition to a component-based design system, we were able to ensure the elements of the build could be reused for future projects.</p>      
+            <img src="img/IMG_9418.png" class="img-fluid"></p>
+<p>
+
+          Below are some highlights from the testing sessions conducted with those previously familiar with the offerings.</p></div></div>
+
+<div class="container-fluid" style="max-width: 1280px;">
+  <div class="row row-cols-2">          
+          <blockquote class="blockquote col">
+  <p class="mb-0">“I like that this is a clear resource for people on the site. In the past, I think it wasn't always the most clear what the site is used for an how to get the most out of it and I think this page helps a lot with that.”</p>
+</blockquote>
+          <blockquote class="blockquote col">
+  <p class="mb-0">“I really like the feel and layout of the page. I think it is easy to navigate. I like that there are suggested topics to follow and that it pulls some hilights from the groups that I am currently in.”</p>
+</blockquote>
+
+          <blockquote class="blockquote col">
+  <p class="mb-0">“If someone is hopping on Jobcase with a specific question or concern they can easily find and get the answers they are looking for. ”</p>
+</blockquote>
+
+          <blockquote class="blockquote col">
+  <p class="mb-0">“I love how clean and clear everything is. The organization and grouping of the different topics makes it a very simple user experience.”</p>
+</blockquote>
 
 
-      <h3>Launch and further feedback gathering</h3>
-      <p>The first version of For You was launched to our user base at the end of 2019 and response was measured closely, both as sentiment within conversations in the community and as qualitative feedback through engagement and content contribution metrics. As a high level metric, we saw a 30% increase in likes and comments post-launch and the framework was effective in continuing to push the design later as we discovered low engagement shelves that were replaced and iterated on. A channel was created for internal users to provide feedback about bugs and desired features.</p>
-        <img src="img/fy-feedback.png" class="img-fluid proj-photo">
 
-      <h3>Post-launch iterations</h3>
-      <p>In the months after launch, we continued to monitor the response and think through ways to improve the product for our members. Future variants were introduced with widgets that made it easier to follow topics, ask questions to the community, provide job preferences, and add information and history to one's profile. </p>
+          <blockquote class="blockquote col">
+  <p class="mb-0">“I especially like the bar in the center that lets members know what they can do on Jobcase. I feel like that will eliminate a lot of navigation confusion”</p>
+</blockquote>
+
+
+          <blockquote class="blockquote col">
+  <p class="mb-0">“It seems much more that just a job board. There is a real social media feel to the landing page. Very interactive and intriguing.”</p>
+</blockquote>
 
   </div>
 </div>
+  <div class="container-fluid" style="max-width: 768px"> 
+      <h3>IV. Implementing the solution</h3>
+      <p>With the qualitative feedback gathered and high fidelity mockups created, I worked with a team of five developers to begin building out the components using Zeplin as a handoff tool, with daily standups and frequent in-person review cycles essential to bringing the concept to the screen. As this project was part of the transition to a component-based design system, we were able to ensure the elements of the build could be reused for future projects.</p>  
 
+      <h3>V. Evaluating and iterating</h3>      
+      <p>The first version of For You was launched to our user base at the end of 2019 and response was measured closely, both as sentiment within conversations in the community and as qualitative feedback through engagement and content contribution metrics. As a high level metric, we saw a 30% increase in likes and comments post-launch and the framework was effective in continuing to push the design later as we discovered low engagement shelves that were replaced and iterated on. A channel was created for internal users to provide feedback about bugs and desired features.</p>
+
+       <img src="img/fy-feedback.png" class="img-fluid">
+
+        <p>In the months after launch, we continued to monitor the response and think through ways to improve the product for our members. Future variants were introduced with widgets that made it easier to follow topics, ask questions to the community, provide job preferences, and add information and history to one's profile.
+
+</p>
+  </div>
+</div>
 <div class="padding">
-  <div class="container">
-      <h2>Challenges</h2>
+  <div class="container-fluid" style="max-width: 768px"> 
+      <h2><br>04. Challenges
+</h2>
       <h3>Technical limitations</h3>
-      <p>Features that would have made for an optimal user experience like a smarter sort and recommendation algorithm and infinite scroll were not possible at the time of launch. Although these features were recognized as important for the best experience and had the possibility of high returns, they were not seen as viable.</p>
+      <p>Features that would have made for an optimal user experience like a smarter sort and recommendation algorithm and infinite scroll were not possible at the time of launch. Although these features were recognized as important for the best experience and had the possibility of high returns, they were not seen as viable.
 
-      <h3>User generated content</h3>
-      <p>With any community, the variance of content length and type is immense and this was not as well planned for as it could have been during the initial builds. Cards were most effective when there was a title and a long paragraph with limited markup but in practice many of the posts our users contributed made use of special formatting, frequent line breaks, and sometimes no titles. Many of the mockups also relied on beautiful imagery in groups or topics that ended up being low quality in practive. </p>
+</p>
 
+            <h3>User generated content
+</h3>
+      <p>With any community, the variance of content length and type is immense and this was not as well planned for as it could have been during the initial builds. Cards were most effective when there was a title and a long paragraph with limited markup but in practice many of the posts our users contributed made use of special formatting, frequent line breaks, and sometimes no titles. Many of the mockups also relied on beautiful imagery in groups or topics that ended up being low quality in practive.</p>
 
-      <h3>Conflicting visions</h3>
+            <h3>Conflicting visions</h3>
       <p>One of the goals of the For You pages was to bridge the gap between editorial content from paid contributors and user generated content, but stakeholders had conflicting ideas on which should be prioritized so we often found ourselves flipping between two visions based on feedback, trying to please all parties.</p>
   </div>
 </div>
 
 <div class="padding">
-  <div class="container">
-      <h2>Outcomes</h2>
-      <p>While we continue to identify areas for improvement and evolution, the For You page was a success in leading to strong, measurable  improvements in engagement through likes and comments as well as through content contribution. It also provided a strong base for future resource pages that we were able to adapt to help users navigate the COVID-19 pandemic and mass unemployment.</p>
+  <div class="container-fluid" style="max-width: 768px"> 
+      <h2>05. Outcomes</h2>
+      <p>While we continue to identify areas for improvement and evolution, the For You page was a success in leading to strong, measurable improvements in engagement through likes and comments as well as through content contribution. It also provided a strong base for future resource pages that we were able to adapt to help users navigate the COVID-19 pandemic and mass unemployment.</p>
 
   </div>
 </div>
@@ -270,7 +436,6 @@
         </div>
       </div>
     </div>
-
 <footer>
   <div class="container-fluid padding custom-bg">
     <div class="row text-center">
@@ -313,9 +478,6 @@
     </div>
 </figure>
 -->
-
-
-
 
 
 </body>
