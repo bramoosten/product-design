@@ -26,6 +26,26 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   gtag('config', 'UA-178277822-1');
 </script>
+<script>
+    function myFunction() {
+  var x = document.getElementById("gform");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+
+    function hide() {
+  var x = document.getElementById("startbutton");
+  if (x.style.display === "none") {
+    x.style.display = "inline-block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
+
 
 
         <title>Beacon & Beech Keepsake Preservation</title>
@@ -181,7 +201,7 @@ src="https://www.facebook.com/tr?id=188912228343089&ev=PageView&noscript=1"
                         
                         <!--BUTTON START-->
                         <div class="generic_price_btn clearfix">
-                        	<a class="js-scroll-trigger" href="#order">Start project</a>
+                        	<a class="js-scroll-trigger"href="#order" onclick="myFunction(); hide();">Start project</a>
                         </div>
                         <!--//BUTTON END-->
                         
@@ -239,7 +259,7 @@ src="https://www.facebook.com/tr?id=188912228343089&ev=PageView&noscript=1"
                         
                         <!--BUTTON START-->
                         <div class="generic_price_btn clearfix">
-                        	<a class="js-scroll-trigger" href="#order">Start project</a>
+                        	<a class="js-scroll-trigger" href="#order" onclick="myFunction(); hide()">Start project</a>
                         </div>
                         <!--//BUTTON END-->
                         
@@ -321,8 +341,9 @@ src="https://www.facebook.com/tr?id=188912228343089&ev=PageView&noscript=1"
                 <section class="page-section bg-light" id="order">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Begin Your Order</h2>
-<iframe id="gform" src="https://docs.google.com/forms/d/e/1FAIpQLSezmkMd_YSYngyl0KuVO4lrOEeSC6v_FV3lcdNThdMw4F0ZeA/viewform?embedded=true" width="100%" height="920" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+                    <h2 class="section-heading text-uppercase" >Begin Your Order</h2>
+                <a id="startbutton" style="display:inline-block;" class="btn btn-primary btn-xl text-uppercase js-scroll-trigger p-4" href="#order" onclick="myFunction(); hide()">click to Get started</a>
+<iframe style="display:none;" id="gform" src="https://docs.google.com/forms/d/e/1FAIpQLSezmkMd_YSYngyl0KuVO4lrOEeSC6v_FV3lcdNThdMw4F0ZeA/viewform?embedded=true" width="100%" height="920" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
             </div>
         </section>
         <!-- Footer-->
