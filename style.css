@@ -4,6 +4,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Martel:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Teko:wght@500&display=swap');
 @import url('http://bramoosten.com/Soulcraft.ttf');
+@import url(CheltenhamStdBoldItalic.otf);
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap');
+@import url("https://use.typekit.net/hxx4kvr.css");
+
+
 
 @font-face {
   font-family: Soulcraft;
@@ -46,7 +51,7 @@ body {
 header {
   position: relative;
   background-color: #29353C;
-  height: 75vh;
+  height: 60vh;
   min-height: 25rem;
   width: 100%;
   overflow: hidden;
@@ -97,15 +102,51 @@ header .overlay {
 
 
 }
+/* .hero-bg {
+
+ background:  url(img/pco-10575.jpg) 90% bottom scroll no-repeat, url(img/mountain.png) 100% 100% scroll no-repeat, url(img/scoop.svg) 10% -200px  scroll no-repeat, url(img/bg-gradient.png) center top repeat-x #e4a865;
+  background-size: 20%, 50%, 50%, 100%;
+
+ background:  , url(img/bg-gradient.png) repeat-x top; z-index: 1;
+
+
+} */
+
 .hero-bg {
+  position: relative;
 
- background: url(img/saw.svg) 100% 100% scroll no-repeat, url(img/scoop.svg) 10% -200px  scroll no-repeat,  url(img/sun.svg) 90% -50px scroll no-repeat #007BC7;
-  background-size: 70%, 50%, 20%;
+  background-image: 
+    url('img/birds.png'),
+    url('img/trees-flipped.png'),
+    url('img/mtns.png'),
+    url('img/trees.png'),
+    url('img/bg1.jpg');
 
-/* background: url(img/memphis-geometry.png) center center scroll, url(img/gradient-bg.png) center center scroll, linear-gradient(180deg, rgba(66,228,253,1) 0%, rgba(75,152,224,1) 70%, rgba(121,113,191,1) 100%);*/
+  background-position: 
+    90% 50px,
+    100% 100%,
+    bottom right,
+    0% 120%,
+    center;
+  
+  background-repeat: 
+    no-repeat,
+    no-repeat,
+    no-repeat,
+    no-repeat,
+    repeat-x;
 
+  background-size:
+    20%,
+    300px,
+    70%,
+    20%,
+    cover;
 
+  background-color: #e4a865;
 }
+
+
 .card-title {
 
   margin-top:.25em;
@@ -120,23 +161,23 @@ header .overlay {
   padding-bottom: 32px;
   }
   .masthead-brand {
-}
-padding-bottom: 10px;
+    padding-bottom: 10px;
 
-  }
 }
 .title-fix {
   padding-bottom: 0px !important;
 }
  
   .name {
-
+    -webkit-font-smoothing: subpixel-antialiased;
     font-size: 7em ; 
-    margin-left: -4px;
-    font-family: Soulcraft, Soulcraft-regular, sans-serif;
-    font-weight: 800;
+    margin-left: 0px;
+    font-family: 'novecento-sans-condensed', sans-serif;
+    font-weight: 800 !important;
+    color: rgb(243, 243, 243);
+        font-style: none;
     font-variation-settings: 'wdth' 100;
-    padding-top: 25px;
+    padding-top: 05px;
     padding-bottom: 10px;
     transition: font-variation-settings 500ms ease;
 
@@ -144,10 +185,10 @@ padding-bottom: 10px;
 
 .bio {
 
-  font-size: 1.5em;
+  font-size: 1.25em;
   line-height: 150% !important;
   font-weight: 300 !important;
-  color: rgba(255,255,255,0.75);
+  color: rgba(255,255,255);
 
 
 }
@@ -171,17 +212,41 @@ padding-bottom: 10px;
   font-weight: 300 !important;  
   margin-left: -4px;
 }
-  .hero-bg {
+.hero-bg {
+  position: relative;
 
- background: url(img/saw.svg) 100px 100% scroll no-repeat, url(img/scoop.svg) -50px 0%  scroll no-repeat,  url(img/sun.svg) 100% -50px scroll no-repeat #007BC7;
-  background-size: 100%, 70%, 30%;
-  transition: background 1000ms ease;
+  background-image: 
+    url('img/birds.png'),
+    url('img/trees-flipped.png'),
+    url('img/mtns.png'),
+    url('img/trees.png'),
+    url('img/bg1.jpg');
 
+  background-position: 
+    90% 50px,
+    100% 100%,
+    bottom right,
+    0% 120%,
+    center;
+  
+  background-repeat: 
+    no-repeat,
+    no-repeat,
+    no-repeat,
+    no-repeat,
+    repeat-x;
 
-/* background: url(img/memphis-geometry.png) center center scroll, url(img/gradient-bg.png) center center scroll, linear-gradient(180deg, rgba(66,228,253,1) 0%, rgba(75,152,224,1) 70%, rgba(121,113,191,1) 100%);*/
+  background-size:
+    20%,
+    300px,
+    70%,
+    20%,
+    cover;
+
+  background-color: #e4a865;
 }
   h2 {
-    font-family: Soulcraft, Soulcraft-regular, sans-serif;
+    font-family: 'novecento-sans-condensed', sans-serif;
   font-weight: 500 !important;
   line-height: 100% !important;
 font-size: 2em !important;
@@ -201,7 +266,7 @@ color: #313442;
   }
 
   h2 {
-    font-family: Soulcraft, Soulcraft-regular, sans-serif;
+    font-family: 'Cheltenham', sans-serif;
   font-weight: 500 !important;
   line-height: 100% !important;
 font-size: 2em !important;
@@ -224,7 +289,7 @@ vertical-align: .1em;
 }
 
   h1 {
-  font-family: 'Jost', sans-serif;
+  font-family: 'Cheltenham', 'Jost', sans-serif;
   font-weight: 500 !important;
   line-height: 90% !important;
     color: #fff;
@@ -232,7 +297,7 @@ vertical-align: .1em;
 }
 
   h2 {
-    font-family: Soulcraft, Soulcraft-regular, sans-serif;
+    font-family: 'Cheltenham', Soulcraft, Soulcraft-regular, sans-serif;
   font-weight: 500 !important;
   line-height: 100% !important;
 font-size: 3em;
@@ -241,10 +306,10 @@ padding-bottom: 16px;
 }
 
   h3 {
-  font-family: 'Jost', sans-serif;
+  font-family: 'Cheltenham', 'Jost', sans-serif;
   font-weight: 400 !important;
   line-height: 110% !important;
-  font-size: 1.75em;
+  font-size: 1.5em;
 color: #313442;
 margin-top: 5px;
 
