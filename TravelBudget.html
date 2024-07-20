@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget helper</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fafafa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            border: 1px solid #ddd;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #333;
+        }
+        .slider-container {
+            margin-bottom: 20px;
+        }
+        .slider-label {
+            margin-bottom: 5px;
+            display: block;
+            font-weight: 600;
+            color: #333;
+        }
+        .value-display {
+            float: right;
+            font-weight: 600;
+            color: #333;
+        }
+input[type=range] {
+    width: 100%;
+    margin: 10px 0;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 8px;
+    background: linear-gradient(to right, #ff5a5f 0%, #ff5a5f var(--value), #e0e0e0 var(--value), #e0e0e0 100%);
+    border-radius: 5px;
+    outline: none;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #ff5a5f;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+input[type=range]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #ff5a5f;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+input[type=range]::-ms-thumb {
+    width: 20px;
+    height: 20px;
+    background: #ff5a5f;
+    cursor: pointer;
+    border-radius: 50%;
+}
+        .summary-container {
+            margin-top: 30px;
+        }
+        .summary-container h2 {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .summary-container p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.5;
+        }
+        .highlight {
+            font-weight: 700;
+            color: #ff5a5f;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Budget helper for solo travel</h1>
+        <div class="slider-container">
+            <label for="budgetSlider" class="slider-label">Budget</label>
+            <input type="range" id="budgetSlider" min="0" max="2000" value="1000">
+            <span class="value-display" id="budgetValue">€1000</span>
+        </div>
+
+        <div class="slider-container">
+            <label for="nightsSlider" class="slider-label">Nights</label>
+            <input type="range" id="nightsSlider" min="1" max="11" value="6">
+            <span class="value-display" id="nightsValue">6</span>
+        </div>
+
+        <div class="slider-container">
+            <label for="flightCostSlider" class="slider-label">Fight fares</label>
+            <input type="range" id="flightCostSlider" min="0" max="1000" value="500">
+            <span class="value-display" id="flightCostValue">€500</span>
+        </div>
+
+        <div class="slider-container">
+            <label for="hotelCostSlider" class="slider-label">Hotel rate</label>
+            <input type="range" id="hotelCostSlider" min="0" max="500" value="250">
+            <span class="value-display" id="hotelCostValue">€250</span>
+        </div>
+
+        <div class="summary-container">
+            <h2>Summary</h2>
+            <p id="summaryText">Set your budget, nights, and flight cost to see the summary here.</p>
+        </div>
+    </div>
+
+    <script>
+        const budgetSlider = document.getElementById('budgetSlider');
+        const nightsSlider = document.getElementById('nightsSlider');
+        const flightCostSlider = document.getElementById('flightCostSlider');
+        const hotelCostSlider = document.getElementById('hotelCostSlider');
+
+        const budgetValue = document.getElementById('budgetValue');
+        const nightsValue = document.getElementById('nightsValue');
+        const flightCostValue = document.getElementById('flightCostValue');
+        const hotelCostValue = document.getElementById('hotelCostValue');
+
+function updateValues() {
+    budgetValue.textContent = `€${budgetSlider.value}`;
+    nightsValue.textContent = nightsSlider.value;
+    flightCostValue.textContent = `€${flightCostSlider.value}`;
+    const remainingBudget = budgetSlider.value - flightCostSlider.value;
+    const hotelCost = remainingBudget / nightsSlider.value;
+    hotelCostSlider.value = hotelCost > 500 ? 500 : hotelCost < 0 ? 0 : hotelCost;
+    hotelCostValue.textContent = `€${hotelCostSlider.value}`;
+
+    budgetSlider.style.setProperty('--value', `${(budgetSlider.value / budgetSlider.max) * 100}%`);
+    nightsSlider.style.setProperty('--value', `${((nightsSlider.value - 1) / (nightsSlider.max - 1)) * 100}%`);
+    flightCostSlider.style.setProperty('--value', `${(flightCostSlider.value / flightCostSlider.max) * 100}%`);
+    hotelCostSlider.style.setProperty('--value', `${(hotelCostSlider.value / hotelCostSlider.max) * 100}%`);
+}
+
+
+        function updateSummary() {
+            const budget = budgetSlider.value;
+            const nights = nightsSlider.value;
+            const flightCost = flightCostSlider.value;
+            const hotelCost = hotelCostSlider.value;
+
+            const summaryText = `With a budget of <span class="highlight">€${budget}</span>, for <span class="highlight">${nights}</span> nights and a flight cost of <span class="highlight">€${flightCost}</span>, you can spend <span class="highlight">€${hotelCost}</span> per night on your hotel.`;
+            document.getElementById('summaryText').innerHTML = summaryText;
+        }
+
+        function updateBudgetFromHotelCost() {
+            const hotelCost = hotelCostSlider.value;
+            const nights = nightsSlider.value;
+            const flightCost = flightCostSlider.value;
+
+            const newBudget = (hotelCost * nights) + parseInt(flightCost);
+            budgetSlider.value = newBudget > 2000 ? 2000 : newBudget;
+            budgetValue.textContent = `€${budgetSlider.value}`;
+        }
+
+budgetSlider.addEventListener('input', () => {
+    updateValues();
+    updateSummary();
+});
+
+nightsSlider.addEventListener('input', () => {
+    updateValues();
+    updateSummary();
+});
+
+flightCostSlider.addEventListener('input', () => {
+    updateValues();
+    updateSummary();
+});
+
+hotelCostSlider.addEventListener('input', () => {
+    hotelCostValue.textContent = `€${hotelCostSlider.value}`;
+    updateBudgetFromHotelCost();
+    updateSummary();
+    updateValues(); // Ensure background updates on hotel cost slider input
+});
+
+updateValues();
+updateSummary(); // Initialize values and summary on load
+
+    </script>
+
+</body>
+</html>
