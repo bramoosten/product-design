@@ -4,44 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Budget helper for solo travel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Arsenal:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+   <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css"
+/>
     <style>
+
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Arsenal', serif;
+            font-size: 1.15rem;            
             margin: 0;
             padding: 0;
-            background-color: #fafafa;
+            background-color: #F4F4EE;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
+
         }
+
+
         .container {
             background: #fff;
-            padding: 30px;
+            padding: 40px;
             border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            max-width: 400px;
+            max-width: 500px;
             width: 100%;
-            border: 1px solid #ddd;
+            border: 14px solid #9B9B94;
+            border: 1px solid rgb(221, 221, 221);
+            border-radius: 4px;
+            box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 16px;"
         }
         h1 {
-            font-size: 24px;
-            margin-bottom: 20px;
-            text-align: center;
+            font-family: 'Playfair Display', serif;                        
+            font-size: 28px;
+            margin-bottom: 40px;
+            text-align: left;
             color: #333;
         }
         .slider-container {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
         .slider-label {
-            margin-bottom: 5px;
+            margin-bottom: 10px;
             display: block;
             font-weight: 600;
             color: #333;
         }
         .value-display {
+  font-family: "Playfair Display", serif;
+
             float: right;
-            font-weight: 600;
+            font-weight: 400;
             color: #333;
         }
 input[type=range] {
@@ -49,9 +66,9 @@ input[type=range] {
     margin: 10px 0;
     -webkit-appearance: none;
     appearance: none;
-    height: 8px;
-    background: linear-gradient(to right, #ff5a5f 0%, #ff5a5f var(--value), #e0e0e0 var(--value), #e0e0e0 100%);
-    border-radius: 5px;
+    height: 6px;
+    background: linear-gradient(to right, #2C4959 0%, #2C4959 var(--value), #C9D7E3 var(--value), #C9D7E3 100%);
+    border-radius: 4px;
     outline: none;
     transition: all 0.5s ease; /* Add this line for smooth transitions */
 }
@@ -60,14 +77,15 @@ input[type=range] {
             appearance: none;
             width: 20px;
             height: 20px;
-            background: #ff5a5f;
+            background: #2C4959;
             cursor: pointer;
             border-radius: 50%;
+
         }
         input[type=range]::-moz-range-thumb {
-            width: 20px;
-            height: 20px;
-            background: #ff5a5f;
+            width: 16px;
+            height: 16px;
+            background: #2C4959;
             cursor: pointer;
             border-radius: 50%;
         }
@@ -75,64 +93,76 @@ input[type=range] {
             margin-top: 30px;
         }
         .summary-container h2 {
-            font-size: 20px;
+            font-size: 24px;
             color: #333;
             margin-bottom: 10px;
         }
         .summary-container p {
-            font-size: 16px;
+            font-size: 18px;
             color: #555;
             line-height: 1.5;
         }
         .highlight {
             font-weight: 700;
-            color: #ff5a5f;
+            color: #2B609E;
         }
         #randomizeButton {
+            font-family: 'Arsenal', serif;
+            text-transform: uppercase;
+            font-size: 16px;
+            line-height:20px;            
             width: 100%;
             padding: 10px;
             margin-top: 20px;
-            background: #ff5a5f;
+            background: #2C4959;
             color: #fff;
             border: none;
-            border-radius: 5px;
+            border-radius: 4px;
             cursor: pointer;
+            vertical-align:baseline;
+
+        .iconoir-refresh-double {
+            font-size: 12px;
         }
+
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>Budget helper for solo travel</h1>
-
+        <h1>A little tool that helps you plan a short trip without spending too much money.</h1>
         <div class="slider-container">
-            <label for="budgetSlider" class="slider-label">💵 Budget</label>
-            <input type="range" id="budgetSlider" min="0" max="3000" value="1000">
+            <i class="iconoir-wallet"></i>
+            <label for="budgetSlider" class="slider-label">Budget</label>
+            <input type="range" id="budgetSlider" min="0" max="3000" value="1500">
             <span class="value-display" id="budgetValue">€1000</span>
         </div>
 
         <div class="slider-container">
-            <label for="nightsSlider" class="slider-label">📅 Nights</label>
+            <i class="iconoir-half-moon"></i>
+            <label for="nightsSlider" class="slider-label">Nights</label>
             <input type="range" id="nightsSlider" min="1" max="11" value="6">
             <span class="value-display" id="nightsValue">6</span>
         </div>
 
         <div class="slider-container">
-            <label for="flightCostSlider" class="slider-label">🛫 Transportation cost</label>
+            <i class="iconoir-airplane"></i>
+            <label for="flightCostSlider" class="slider-label">Fares (transportation)</label>
             <input type="range" id="flightCostSlider" min="0" max="1000" value="500">
             <span class="value-display" id="flightCostValue">€500</span>
         </div>
 
         <div class="slider-container">
-            <label for="hotelCostSlider" class="slider-label">🛏️ Accomodation cost</label>
+            <i class="iconoir-city"></i>
+            <label for="hotelCostSlider" class="slider-label">Lodging (per night)</label>
             <input type="range" id="hotelCostSlider" min="0" max="500" value="83">
             <span class="value-display" id="hotelCostValue">€83</span>
         </div>
 
-        <button id="randomizeButton">🎲 Randomize</button>
-
+        <button id="randomizeButton"><i class="iconoir-refresh-double"></i>&nbsp;Randomize</button>
+       
         <div class="summary-container">
-            <h2>Summary</h2>
+            <h2>In summary</h2>
             <p id="summaryText">Set your budget, nights, and flight cost to see the summary here.</p>
         </div>
     </div>
