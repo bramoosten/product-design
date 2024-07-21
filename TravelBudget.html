@@ -11,6 +11,8 @@
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css"
 />
+
+
     <style>
 
         body {
@@ -22,8 +24,6 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-
         }
 
 
@@ -32,6 +32,7 @@
             padding: 40px;
             border-radius: 12px;
             max-width: 500px;
+            margin-top: 50px;
             width: 100%;
             border: 14px solid #9B9B94;
             border: 1px solid rgb(221, 221, 221);
@@ -98,7 +99,7 @@ input[type=range] {
             margin-bottom: 10px;
         }
         .summary-container p {
-            font-size: 18px;
+            font-size: 19px;
             color: #555;
             line-height: 1.5;
         }
@@ -125,7 +126,45 @@ input[type=range] {
             font-size: 12px;
         }
 
+
     </style>
+
+    <style>
+
+        @media screen and (max-width: 480px) {
+        .container {
+                padding: 15px;
+                margin: 10px;
+            }
+
+            h1 {
+                font-size: 24px;
+            margin-bottom: 20px;
+
+            }
+
+            .summary-container h2 {
+                font-size: 18px;
+            }
+
+            .summary-container p {
+                font-size: 16px;
+            }
+
+            .slider-label {
+                font-size: 16px;
+            }
+
+            .value-display {
+                font-size: 16px;
+            }
+
+            #randomizeButton {
+                padding: 8px;
+                font-size: 12px;
+            }
+        }
+</style>    
 </head>
 <body>
 
