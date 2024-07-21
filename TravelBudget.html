@@ -44,16 +44,17 @@
             font-weight: 600;
             color: #333;
         }
-        input[type=range] {
-            width: 100%;
-            margin: 10px 0;
-            -webkit-appearance: none;
-            appearance: none;
-            height: 8px;
-            background: linear-gradient(to right, #ff5a5f 0%, #ff5a5f var(--value), #e0e0e0 var(--value), #e0e0e0 100%);
-            border-radius: 5px;
-            outline: none;
-        }
+input[type=range] {
+    width: 100%;
+    margin: 10px 0;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 8px;
+    background: linear-gradient(to right, #ff5a5f 0%, #ff5a5f var(--value), #e0e0e0 var(--value), #e0e0e0 100%);
+    border-radius: 5px;
+    outline: none;
+    transition: all 0.5s ease; /* Add this line for smooth transitions */
+}
         input[type=range]::-webkit-slider-thumb {
             -webkit-appearance: none;
             appearance: none;
@@ -137,107 +138,132 @@
     </div>
 
     <script>
-const budgetSlider = document.getElementById('budgetSlider');
-const nightsSlider = document.getElementById('nightsSlider');
-const flightCostSlider = document.getElementById('flightCostSlider');
-const hotelCostSlider = document.getElementById('hotelCostSlider');
-const randomizeButton = document.getElementById('randomizeButton');
+    const budgetSlider = document.getElementById('budgetSlider');
+    const nightsSlider = document.getElementById('nightsSlider');
+    const flightCostSlider = document.getElementById('flightCostSlider');
+    const hotelCostSlider = document.getElementById('hotelCostSlider');
+    const randomizeButton = document.getElementById('randomizeButton');
 
-const budgetValue = document.getElementById('budgetValue');
-const nightsValue = document.getElementById('nightsValue');
-const flightCostValue = document.getElementById('flightCostValue');
-const hotelCostValue = document.getElementById('hotelCostValue');
+    const budgetValue = document.getElementById('budgetValue');
+    const nightsValue = document.getElementById('nightsValue');
+    const flightCostValue = document.getElementById('flightCostValue');
+    const hotelCostValue = document.getElementById('hotelCostValue');
 
-let previousHotelCost = hotelCostSlider.value;
+    let previousHotelCost = hotelCostSlider.value;
 
-function getRandomValue(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+    function getRandomValue(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
 
-function updateValues() {
-    budgetValue.textContent = `€${budgetSlider.value}`;
-    nightsValue.textContent = nightsSlider.value;
-    flightCostValue.textContent = `€${flightCostSlider.value}`;
+    function updateValues() {
+        budgetValue.textContent = `€${budgetSlider.value}`;
+        nightsValue.textContent = nightsSlider.value;
+        flightCostValue.textContent = `€${flightCostSlider.value}`;
 
-    const remainingBudget = budgetSlider.value - flightCostSlider.value;
-    const hotelCost = remainingBudget / nightsSlider.value;
-    hotelCostSlider.value = hotelCost > 500 ? 500 : hotelCost < 0 ? 0 : hotelCost;
-    hotelCostValue.textContent = `€${hotelCostSlider.value}`;
+        const remainingBudget = budgetSlider.value - flightCostSlider.value;
+        const hotelCost = remainingBudget / nightsSlider.value;
+        hotelCostSlider.value = hotelCost > 500 ? 500 : hotelCost < 0 ? 0 : hotelCost;
+        hotelCostValue.textContent = `€${hotelCostSlider.value}`;
 
-    budgetSlider.style.setProperty('--value', `${(budgetSlider.value / budgetSlider.max) * 100}%`);
-    nightsSlider.style.setProperty('--value', `${((nightsSlider.value - 1) / (nightsSlider.max - 1)) * 100}%`);
-    flightCostSlider.style.setProperty('--value', `${(flightCostSlider.value / flightCostSlider.max) * 100}%`);
-    hotelCostSlider.style.setProperty('--value', `${(hotelCostSlider.value / hotelCostSlider.max) * 100}%`);
-
-    previousHotelCost = hotelCostSlider.value;
-}
-
-function updateSummary() {
-    const budget = budgetSlider.value;
-    const nights = nightsSlider.value;
-    const flightCost = flightCostSlider.value;
-    const hotelCost = hotelCostSlider.value;
-
-    const summaryText = `With a budget of <span class="highlight">€${budget}</span>, for <span class="highlight">${nights}</span> nights and a flight cost of <span class="highlight">€${flightCost}</span>, you can spend <span class="highlight">€${hotelCost}</span> per night on your hotel.`;
-    document.getElementById('summaryText').innerHTML = summaryText;
-}
-
-function updateBudgetFromHotelCost() {
-    const hotelCost = hotelCostSlider.value;
-    const nights = nightsSlider.value;
-    const flightCost = flightCostSlider.value;
-
-    const newBudget = (hotelCost * nights) + parseInt(flightCost);
-    budgetSlider.value = newBudget > 3000 ? 3000 : newBudget;
-    budgetValue.textContent = `€${budgetSlider.value}`;
-
-    budgetSlider.style.setProperty('--value', `${(budgetSlider.value / budgetSlider.max) * 100}%`);
-}
-
-function randomizeValues() {
-    budgetSlider.value = getRandomValue(0, 3000);
-    nightsSlider.value = getRandomValue(1, 11);
-    flightCostSlider.value = getRandomValue(0, 1000);
-    updateValues();
-    updateSummary();
-}
-
-budgetSlider.addEventListener('input', () => {
-    updateValues();
-    updateSummary();
-});
-
-nightsSlider.addEventListener('input', () => {
-    updateValues();
-    updateSummary();
-});
-
-flightCostSlider.addEventListener('input', () => {
-    updateValues();
-    updateSummary();
-});
-
-hotelCostSlider.addEventListener('input', () => {
-    const newHotelCost = hotelCostSlider.value;
-    if (budgetSlider.value == 3000 && newHotelCost > previousHotelCost) {
-        hotelCostSlider.value = previousHotelCost;
-    } else {
-        hotelCostValue.textContent = `€${newHotelCost}`;
-        updateBudgetFromHotelCost();
-        updateSummary();
+        budgetSlider.style.setProperty('--value', `${(budgetSlider.value / budgetSlider.max) * 100}%`);
+        nightsSlider.style.setProperty('--value', `${((nightsSlider.value - 1) / (nightsSlider.max - 1)) * 100}%`);
+        flightCostSlider.style.setProperty('--value', `${(flightCostSlider.value / flightCostSlider.max) * 100}%`);
         hotelCostSlider.style.setProperty('--value', `${(hotelCostSlider.value / hotelCostSlider.max) * 100}%`);
+
         previousHotelCost = hotelCostSlider.value;
     }
-});
 
-randomizeButton.addEventListener('click', randomizeValues);
+    function updateSummary() {
+        const budget = budgetSlider.value;
+        const nights = nightsSlider.value;
+        const flightCost = flightCostSlider.value;
+        const hotelCost = hotelCostSlider.value;
 
-updateValues();
-updateSummary(); // Initialize values and summary on load
+        const summaryText = `With a budget of <span class="highlight">€${budget}</span>, for <span class="highlight">${nights}</span> nights and a flight cost of <span class="highlight">€${flightCost}</span>, you can spend <span class="highlight">€${hotelCost}</span> per night on your hotel.`;
+        document.getElementById('summaryText').innerHTML = summaryText;
+    }
 
-el.addEventListener("click", console.log, {
-    once: true,
-});
+    function updateBudgetFromHotelCost() {
+        const hotelCost = hotelCostSlider.value;
+        const nights = nightsSlider.value;
+        const flightCost = flightCostSlider.value;
+
+        const newBudget = (hotelCost * nights) + parseInt(flightCost);
+        budgetSlider.value = newBudget > 3000 ? 3000 : newBudget;
+        budgetValue.textContent = `€${budgetSlider.value}`;
+
+        budgetSlider.style.setProperty('--value', `${(budgetSlider.value / budgetSlider.max) * 100}%`);
+    }
+
+    function animateSlider(slider, targetValue) {
+        const duration = 300;
+        const steps = 50;
+        const stepDuration = duration / steps;
+        const startValue = parseInt(slider.value);
+        const valueDifference = targetValue - startValue;
+        let currentStep = 0;
+
+        function step() {
+            if (currentStep <= steps) {
+                slider.value = startValue + (valueDifference * currentStep) / steps;
+                updateValues();
+                updateSummary();
+                currentStep++;
+                setTimeout(step, stepDuration);
+            } else {
+                slider.value = targetValue;
+                updateValues();
+                updateSummary();
+            }
+        }
+
+        step();
+    }
+
+    function randomizeValues() {
+        const newBudget = getRandomValue(200, 1500);
+        const newNights = getRandomValue(2, 8);
+        const newFlightCost = getRandomValue(100, 500);
+
+        animateSlider(budgetSlider, newBudget);
+        animateSlider(nightsSlider, newNights);
+        animateSlider(flightCostSlider, newFlightCost);
+    }
+
+    budgetSlider.addEventListener('input', () => {
+        updateValues();
+        updateSummary();
+    });
+
+    nightsSlider.addEventListener('input', () => {
+        updateValues();
+        updateSummary();
+    });
+
+    flightCostSlider.addEventListener('input', () => {
+        updateValues();
+        updateSummary();
+    });
+
+    hotelCostSlider.addEventListener('input', () => {
+        const newHotelCost = hotelCostSlider.value;
+        if (budgetSlider.value == 3000 && newHotelCost > previousHotelCost) {
+            hotelCostSlider.value = previousHotelCost;
+        } else {
+            hotelCostValue.textContent = `€${newHotelCost}`;
+            updateBudgetFromHotelCost();
+            updateSummary();
+            hotelCostSlider.style.setProperty('--value', `${(hotelCostSlider.value / hotelCostSlider.max) * 100}%`);
+            previousHotelCost = hotelCostSlider.value;
+        }
+    });
+
+    randomizeButton.addEventListener('click', randomizeValues);
+
+    updateValues();
+    updateSummary(); // Initialize values and summary on load
+
+
 
     </script>
 
