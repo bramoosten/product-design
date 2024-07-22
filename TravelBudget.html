@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Budget helper for solo travel</title>
+    <title>Hotel price calculator</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Arsenal:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
@@ -17,7 +17,7 @@
 
         body {
             font-family: 'Arsenal', serif;
-            font-size: 1.15rem;            
+            font-size: 1.05rem;            
             margin: 0;
             padding: 0;
             background-color: #F4F4EE;
@@ -42,15 +42,14 @@
         h1 {
             font-family: 'Playfair Display', serif;                        
             font-size: 26px;
-            margin-bottom: 40px;
             text-align: left;
             color: #333;
         }
         .slider-container {
-            margin-bottom: 25px;
+            margin-bottom: 15px;
         }
         .slider-label {
-            margin-bottom: 10px;
+            margin-bottom: 5px;
             display: block;
             font-weight: 600;
             color: #333;
@@ -125,7 +124,10 @@ input[type=range] {
         .iconoir-refresh-double {
             font-size: 12px;
         }
+        .headline {
+          margin-bottom: 30px;
 
+        }
 
     </style>
 
@@ -136,13 +138,16 @@ input[type=range] {
                 padding: 15px;
                 margin: 10px;
             }
-
+        
             h1 {
                 font-size: 24px;
             margin-bottom: 20px;
 
             }
+        .headline {
+          margin-bottom: 20px;
 
+        }
             .summary-container h2 {
                 font-size: 18px;
             }
@@ -169,7 +174,10 @@ input[type=range] {
 <body>
 
     <div class="container">
-        <h1>A little tool that helps you plan a short trip without spending too much money.</h1>
+    <div class="headline">        
+        <h1>Hotel price calculator</h1>
+        <p>Set the details of your trip to see how much you can spend on lodging.</p>
+    </div>
         <div class="slider-container">
             <i class="iconoir-wallet"></i>
             <label for="budgetSlider" class="slider-label">Budget</label>
@@ -186,7 +194,7 @@ input[type=range] {
 
         <div class="slider-container">
             <i class="iconoir-airplane"></i>
-            <label for="flightCostSlider" class="slider-label">Fares (transportation)</label>
+            <label for="flightCostSlider" class="slider-label">Tickets (transportation)</label>
             <input type="range" id="flightCostSlider" min="0" max="1000" value="500">
             <span class="value-display" id="flightCostValue">€500</span>
         </div>
