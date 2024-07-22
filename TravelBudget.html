@@ -4,17 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel price calculator</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Arsenal:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-   <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css"
-/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arsenal:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css"/>
 
 
     <style>
-
         body {
             font-family: 'Arsenal', serif;
             font-size: 1.05rem;            
@@ -25,7 +21,6 @@
             justify-content: center;
             align-items: center;
         }
-
 
         .container {
             background: #fff;
@@ -55,23 +50,23 @@
             color: #333;
         }
         .value-display {
-  font-family: "Playfair Display", serif;
+             font-family: "Playfair Display", serif;
 
             float: right;
             font-weight: 400;
             color: #333;
         }
-input[type=range] {
-    width: 100%;
-    margin: 10px 0;
-    -webkit-appearance: none;
-    appearance: none;
-    height: 6px;
-    background: linear-gradient(to right, #2C4959 0%, #2C4959 var(--value), #C9D7E3 var(--value), #C9D7E3 100%);
-    border-radius: 4px;
-    outline: none;
-    transition: all 0.5s ease; /* Add this line for smooth transitions */
-}
+        input[type=range] {
+            width: 100%;
+            margin: 10px 0;
+            -webkit-appearance: none;
+            appearance: none;
+            height: 6px;
+            background: linear-gradient(to right, #2C4959 0%, #2C4959 var(--value), #C9D7E3 var(--value), #C9D7E3 100%);
+            border-radius: 4px;
+            outline: none;
+            transition: all 0.5s ease; /* Add this line for smooth transitions */
+        }
         input[type=range]::-webkit-slider-thumb {
             -webkit-appearance: none;
             appearance: none;
@@ -171,6 +166,8 @@ input[type=range] {
         }
 </style>    
 </head>
+
+
 <body>
 
     <div class="container">
@@ -339,8 +336,6 @@ input[type=range] {
 
     updateValues();
     updateSummary(); // Initialize values and summary on load
-
-
 
     </script>
 
