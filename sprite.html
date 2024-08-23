@@ -15,6 +15,21 @@
             background-image: url('floor-tile.png');
             overflow: hidden
         }
+        #moreRatButton {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    background-color: #edc744;
+    color: black;
+    font-family: monospace;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 1000; /* Make sure it's above other elements */
+}        
         #sprite {
             position: absolute;
             width: 167px;
@@ -24,129 +39,159 @@
             left: 50%;
             top: 50%;
             transform: translate(-50%, -50%);
-                transition: transform 0.2s ease, top 0.2s cubic-bezier(0,0.59,0.96,0.7); /* Add this line */
+                transition: transform 0.2s ease, top 0.4s cubic-bezier(0,0.59,0.96,0.7); /* Add this line */
                 background-repeat: no-repeat;
 
         }
+
     </style>
 </head>
 <body>
-    <div id="sprite"></div>
+    <div id="sprite"></div><button id="moreRatButton">More rat</button>
 
-    <script>
-
-        const sprite = document.getElementById('sprite');
-        let x = window.innerWidth / 2;
-        let y = window.innerHeight / 2;
-
-        function moveSprite(event) {
-            const step = 10;
-            switch(event.key) {
-                case 'ArrowUp':
-                    y -= step;
-                    break;
-                case 'ArrowDown':
-                    y += step;
-                    break;
-                case 'ArrowLeft':
-                    x -= step;
-                    sprite.style.transform = 'translate(-50%, -50%) scaleX(-1)';
-                    break;
-                case 'ArrowRight':
-                    x += step;
-                    sprite.style.transform = 'translate(-50%, -50%) scaleX(1)';
-                    break;
-            }
-            sprite.style.left = x + 'px';
-            sprite.style.top = y + 'px';
-        }
-
+     <script>
         const spriteImages = ['pixel-rat.png', 'pixel-rat-brown.png', 'pixel-rat-blue.png'];
         const selectedSprite = spriteImages[Math.floor(Math.random() * spriteImages.length)];
+        
+        let sprites = []; // Array to hold all sprites
+
+        // Initialize first sprite
+        const sprite = document.getElementById('sprite');
         sprite.style.backgroundImage = `url('${selectedSprite}')`;
+        sprite.style.left = `${window.innerWidth / 2 - 50}px`;
+        sprite.style.top = `${window.innerHeight / 2 - 50}px`;
+        sprites.push(sprite);
 
-        window.addEventListener('keydown', moveSprite);
-
-function jumpSprite() {
-    const originalY = y;
-    y -= 30;
-    sprite.style.top = y + 'px';
-    setTimeout(() => {
-        y = originalY;
-        sprite.style.top = y + 'px';
-    }, 200); // Adjust this to match the duration of the CSS transition
-}
-
-window.addEventListener('keydown', (event) => {
-    if (event.key === ' ') {
-        jumpSprite();
-    }
-});
-
-// Function to detect swipe direction
-let touchStartX = 0;
-let touchStartY = 0;
-
-function handleTouchStart(event) {
-    const firstTouch = event.touches[0];
-    touchStartX = firstTouch.clientX;
-    touchStartY = firstTouch.clientY;
-}
-
-function handleTouchMove(event) {
-    event.preventDefault(); // Prevent scrolling
-
-    if (!touchStartX || !touchStartY) {
-        return;
-    }
-
-    let touchEndX = event.touches[0].clientX;
-    let touchEndY = event.touches[0].clientY;
-
-    let diffX = touchEndX - touchStartX;
-    let diffY = touchEndY - touchStartY;
-
-    if (Math.abs(diffX) > Math.abs(diffY)) {
-        // Horizontal swipe
-        if (diffX > 0) {
-            // Right swipe
-            moveSprite({ key: 'ArrowRight' });
-        } else {
-            // Left swipe
-            moveSprite({ key: 'ArrowLeft' });
+        // Function to create a new sprite
+        function createNewSprite() {
+            const newSprite = document.createElement('div');
+            newSprite.className = 'sprite';
+            newSprite.style.position = 'absolute';
+            newSprite.style.width = '120px';
+            newSprite.style.height = '100px';
+            newSprite.style.backgroundImage = `url('${selectedSprite}')`;
+            newSprite.style.backgroundSize = 'contain';
+            newSprite.style.backgroundRepeat = 'no-repeat';            
+            newSprite.style.left = Math.random() * (window.innerWidth - 100) + 'px';
+            newSprite.style.top = Math.random() * (window.innerHeight - 100) + 'px';
+            newSprite.style.transition = 'transform 0.5s ease, top 0.5s ease-in-out';
+            document.body.appendChild(newSprite);
+            sprites.push(newSprite);
         }
-    } else {
-        // Vertical swipe
-        if (diffY > 0) {
-            // Down swipe
-            moveSprite({ key: 'ArrowDown' });
-        } else {
-            // Up swipe
-            moveSprite({ key: 'ArrowUp' });
+
+        // Add event listener to the "More rat" button
+        document.getElementById('moreRatButton').addEventListener('click', createNewSprite);
+
+        // Function to move all sprites
+        function moveSprite(event) {
+            const step = 10;
+            sprites.forEach(sprite => {
+                let x = parseInt(sprite.style.left);
+                let y = parseInt(sprite.style.top);
+                switch(event.key) {
+                    case 'ArrowUp':
+                        y -= step;
+                        break;
+                    case 'ArrowDown':
+                        y += step;
+                        break;
+                    case 'ArrowLeft':
+                        x -= step;
+                        sprite.style.transform = 'translate(-50%, -50%) scaleX(-1)';
+                        break;
+                    case 'ArrowRight':
+                        x += step;
+                        sprite.style.transform = 'translate(-50%, -50%) scaleX(1)';
+                        break;
+                }
+                sprite.style.left = x + 'px';
+                sprite.style.top = y + 'px';
+            });
         }
-    }
 
-    // Reset values
-    touchStartX = 0;
-    touchStartY = 0;
-}
+        // Function to make all sprites jump
+        function jumpSprite() {
+            sprites.forEach(sprite => {
+                const originalY = parseInt(sprite.style.top);
+                const newY = originalY - 50;
+                sprite.style.top = newY + 'px';
+                setTimeout(() => {
+                    sprite.style.top = originalY + 'px';
+                }, 500); // Adjust this to match the duration of the CSS transition
+            });
+        }
 
-function handleTouchEnd(event) {
-    // Tap detection (no significant movement)
-    if (touchStartX && touchStartY) {
-        jumpSprite();
-    }
+        // Add event listener for keyboard controls
+        window.addEventListener('keydown', (event) => {
+            if (event.key === ' ') {
+                jumpSprite();
+            } else {
+                moveSprite(event);
+            }
+        });
 
-    touchStartX = 0;
-    touchStartY = 0;
-}
+        // Mobile touch controls
+        let touchStartX = 0;
+        let touchStartY = 0;
 
-// Event listeners for touch events
-window.addEventListener('touchstart', handleTouchStart, false);
-window.addEventListener('touchmove', handleTouchMove, false);
-window.addEventListener('touchend', handleTouchEnd, false);
+        function handleTouchStart(event) {
+            const firstTouch = event.touches[0];
+            touchStartX = firstTouch.clientX;
+            touchStartY = firstTouch.clientY;
+        }
 
+        function handleTouchMove(event) {
+            event.preventDefault(); // Prevent scrolling
 
+            if (!touchStartX || !touchStartY) {
+                return;
+            }
+
+            let touchEndX = event.touches[0].clientX;
+            let touchEndY = event.touches[0].clientY;
+
+            let diffX = touchEndX - touchStartX;
+            let diffY = touchEndY - touchStartY;
+
+            if (Math.abs(diffX) > Math.abs(diffY)) {
+                // Horizontal swipe
+                if (diffX > 0) {
+                    // Right swipe
+                    moveSprite({ key: 'ArrowRight' });
+                } else {
+                    // Left swipe
+                    moveSprite({ key: 'ArrowLeft' });
+                }
+            } else {
+                // Vertical swipe
+                if (diffY > 0) {
+                    // Down swipe
+                    moveSprite({ key: 'ArrowDown' });
+                } else {
+                    // Up swipe
+                    moveSprite({ key: 'ArrowUp' });
+                }
+            }
+
+            // Reset values
+            touchStartX = 0;
+            touchStartY = 0;
+        }
+
+        function handleTouchEnd(event) {
+            // Tap detection (no significant movement)
+            if (touchStartX && touchStartY) {
+                jumpSprite();
+            }
+
+            touchStartX = 0;
+            touchStartY = 0;
+        }
+
+        // Event listeners for touch events
+        window.addEventListener('touchstart', handleTouchStart, false);
+        window.addEventListener('touchmove', handleTouchMove, false);
+        window.addEventListener('touchend', handleTouchEnd, false);
     </script>
 </body>
 </html>
