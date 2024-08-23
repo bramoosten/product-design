@@ -81,6 +81,67 @@ window.addEventListener('keydown', (event) => {
     }
 });
 
+// Function to detect swipe direction
+let touchStartX = 0;
+let touchStartY = 0;
+
+function handleTouchStart(event) {
+    const firstTouch = event.touches[0];
+    touchStartX = firstTouch.clientX;
+    touchStartY = firstTouch.clientY;
+}
+
+function handleTouchMove(event) {
+    if (!touchStartX || !touchStartY) {
+        return;
+    }
+
+    let touchEndX = event.touches[0].clientX;
+    let touchEndY = event.touches[0].clientY;
+
+    let diffX = touchEndX - touchStartX;
+    let diffY = touchEndY - touchStartY;
+
+    if (Math.abs(diffX) > Math.abs(diffY)) {
+        // Horizontal swipe
+        if (diffX > 0) {
+            // Right swipe
+            moveSprite({ key: 'ArrowRight' });
+        } else {
+            // Left swipe
+            moveSprite({ key: 'ArrowLeft' });
+        }
+    } else {
+        // Vertical swipe
+        if (diffY > 0) {
+            // Down swipe
+            moveSprite({ key: 'ArrowDown' });
+        } else {
+            // Up swipe
+            moveSprite({ key: 'ArrowUp' });
+        }
+    }
+
+    // Reset values
+    touchStartX = 0;
+    touchStartY = 0;
+}
+
+function handleTouchEnd(event) {
+    // Tap detection (no significant movement)
+    if (touchStartX && touchStartY) {
+        jumpSprite();
+    }
+
+    touchStartX = 0;
+    touchStartY = 0;
+}
+
+// Event listeners for touch events
+window.addEventListener('touchstart', handleTouchStart, false);
+window.addEventListener('touchmove', handleTouchMove, false);
+window.addEventListener('touchend', handleTouchEnd, false);
+
     </script>
 </body>
 </html>
