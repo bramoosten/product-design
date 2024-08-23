@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You the Rat</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url('floor-tile.png');
+        }
+        #sprite {
+            position: absolute;
+            width: 167px;
+            height: 54px;
+            background-image: url('pixel-rat.png');
+            background-size: cover;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+                transition: transform 0.2s ease, top 0.2s cubic-bezier(0,0.59,0.96,0.7); /* Add this line */
+
+        }
+    </style>
+</head>
+<body>
+    <div id="sprite"></div>
+
+    <script>
+
+        const sprite = document.getElementById('sprite');
+        let x = window.innerWidth / 2;
+        let y = window.innerHeight / 2;
+
+        function moveSprite(event) {
+            const step = 10;
+            switch(event.key) {
+                case 'ArrowUp':
+                    y -= step;
+                    break;
+                case 'ArrowDown':
+                    y += step;
+                    break;
+                case 'ArrowLeft':
+                    x -= step;
+                    sprite.style.transform = 'translate(-50%, -50%) scaleX(-1)';
+                    break;
+                case 'ArrowRight':
+                    x += step;
+                    sprite.style.transform = 'translate(-50%, -50%) scaleX(1)';
+                    break;
+            }
+            sprite.style.left = x + 'px';
+            sprite.style.top = y + 'px';
+        }
+
+        const spriteImages = ['pixel-rat.png', 'pixel-rat-brown.png', 'pixel-rat-blue.png'];
+        const selectedSprite = spriteImages[Math.floor(Math.random() * spriteImages.length)];
+        sprite.style.backgroundImage = `url('${selectedSprite}')`;
+
+        window.addEventListener('keydown', moveSprite);
+
+function jumpSprite() {
+    const originalY = y;
+    y -= 30;
+    sprite.style.top = y + 'px';
+    setTimeout(() => {
+        y = originalY;
+        sprite.style.top = y + 'px';
+    }, 200); // Adjust this to match the duration of the CSS transition
+}
+
+window.addEventListener('keydown', (event) => {
+    if (event.key === ' ') {
+        jumpSprite();
+    }
+});
+
+    </script>
+</body>
+</html>
