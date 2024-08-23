@@ -92,6 +92,8 @@ function handleTouchStart(event) {
 }
 
 function handleTouchMove(event) {
+    event.preventDefault(); // Prevent scrolling
+
     if (!touchStartX || !touchStartY) {
         return;
     }
@@ -141,6 +143,7 @@ function handleTouchEnd(event) {
 window.addEventListener('touchstart', handleTouchStart, false);
 window.addEventListener('touchmove', handleTouchMove, false);
 window.addEventListener('touchend', handleTouchEnd, false);
+
 
     </script>
 </body>
