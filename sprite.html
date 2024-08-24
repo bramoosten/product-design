@@ -39,7 +39,7 @@
             left: 50%;
             top: 50%;
             transform: translate(-50%, -50%);
-                transition: transform 0.2s ease, top 0.4s cubic-bezier(0,0.59,0.96,0.7); /* Add this line */
+                transition: transform 0.2s ease, 0.4s cubic-bezier(0,0.59,0.96,0.7); /* Add this line */
                 background-repeat: no-repeat;
 
         }
@@ -74,7 +74,8 @@
             newSprite.style.backgroundRepeat = 'no-repeat';            
             newSprite.style.left = Math.random() * (window.innerWidth - 100) + 'px';
             newSprite.style.top = Math.random() * (window.innerHeight - 100) + 'px';
-            newSprite.style.transition = 'transform 0.5s ease, top 0.5s ease-in-out';
+            newSprite.style.transition = 'transform 0.5s ease, 0.2s ease-in-out';
+            newSprite.invertedControls = Math.random() < 0.5; // 50% chance to invert controls
             document.body.appendChild(newSprite);
             sprites.push(newSprite);
         }
@@ -82,32 +83,36 @@
         // Add event listener to the "More rat" button
         document.getElementById('moreRatButton').addEventListener('click', createNewSprite);
 
-        // Function to move all sprites
-        function moveSprite(event) {
-            const step = 10;
-            sprites.forEach(sprite => {
-                let x = parseInt(sprite.style.left);
-                let y = parseInt(sprite.style.top);
-                switch(event.key) {
-                    case 'ArrowUp':
-                        y -= step;
-                        break;
-                    case 'ArrowDown':
-                        y += step;
-                        break;
-                    case 'ArrowLeft':
-                        x -= step;
-                        sprite.style.transform = 'translate(-50%, -50%) scaleX(-1)';
-                        break;
-                    case 'ArrowRight':
-                        x += step;
-                        sprite.style.transform = 'translate(-50%, -50%) scaleX(1)';
-                        break;
-                }
-                sprite.style.left = x + 'px';
-                sprite.style.top = y + 'px';
-            });
+// Function to move all sprites
+function moveSprite(event) {
+    const step = 50;
+    sprites.forEach(sprite => {
+        let x = parseInt(sprite.style.left);
+        let y = parseInt(sprite.style.top);
+
+        const isInverted = sprite.invertedControls;
+
+        switch(event.key) {
+            case 'ArrowUp':
+                y += isInverted ? step : -step;
+                break;
+            case 'ArrowDown':
+                y += isInverted ? -step : step;
+                break;
+            case 'ArrowLeft':
+                x += isInverted ? step : -step;
+                sprite.style.transform = isInverted ? 'translate(-50%, -50%) scaleX(1)' : 'translate(-50%, -50%) scaleX(-1)';
+                break;
+            case 'ArrowRight':
+                x += isInverted ? -step : step;
+                sprite.style.transform = isInverted ? 'translate(-50%, -50%) scaleX(-1)' : 'translate(-50%, -50%) scaleX(1)';
+                break;
         }
+
+        sprite.style.left = x + 'px';
+        sprite.style.top = y + 'px';
+    });
+}
 
         // Function to make all sprites jump
         function jumpSprite() {
